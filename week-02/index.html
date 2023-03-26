@@ -10,7 +10,7 @@
         </title>
     </head>
     <body>
-        <!--I plan to do the hamburger menu directly with css instead of using the premade icon-->
+        <!--I plan to do the hamburger menu icon directly with css instead of using the premade icon-->
         <header>
             <h1>
                 MegaR
@@ -18,20 +18,20 @@
                 cket
             </h1>
         </header>
-        <nav>
+        <nav class="green">
             <h3>
                 Menu
             </h3>
-            <button>
+            <button id="home" class="nav-button">
                 home
             </button>
-            <button>
+            <button id="sign-up" class="nav-button">
                 sign up
             </button>
-            <button>
+            <button id="log-in" class="nav-button">
                 log in
             </button>
-            <button>
+            <button id="info" class="nav-button">
                 info
             </button>
             <h2>
@@ -53,7 +53,7 @@
             </ul>
         </nav>
         <main>
-            <section id="home">
+            <section id="home" class="gray">
                 <img src="../assets/images/thinker.png" alt="Dude with thousand yard stare
                 figures it all out as he scuats 300kg in a questionable outfit">
                 <h2>
@@ -74,9 +74,9 @@
                 </p>
             </section>
             <!--id="options" does not have a title therefore I thought it best to use a <div> instead of a <section> -->
-            <div id="options">
+            <div id="options" class="green">
                 <img src="../assets/images/coso-with-tick.png" alt="Scuareish doohickey with a tick">
-                <button>
+                <button id="make-an-appointment" class="options">
                     Make an Appointment
                 </button>
                 <p>
@@ -84,7 +84,7 @@
                      From basic to premium, we have options for every budget and level of commitment.
                 </p>
                 <img src="../assets/images/coso.png" alt="Scuareish doohickey with a double hamburger and a star">
-                <button>
+                <button id="our-memberships" class="options">
                     Our memberships
                 </button>
                 <p>
@@ -92,7 +92,7 @@
                      From basic to premium, we have options for every budget and level of commitment.
                 </p>
                 <img src="../assets/images/people.png" alt="One full bloke and two half blokes to either side">
-                <button>
+                <button id="become-a-Member" class="options">
                     Become a Member
                 </button>
                 <p>
@@ -100,7 +100,7 @@
                      We offer a range of benefits to help you reach your fitness potential.
                 </p>
                 <img src="../assets/images/dialogue.png" alt="dialogue scuareish doohickey">
-                <button>
+                <button id="suggestions" class="options">
                     Suggestions
                 </button>
                 <p>
@@ -109,7 +109,7 @@
                     and help us make our gym the best it can be for our members
                 </p>
             </div>
-            <section id="form">
+            <section id="form" class="blue">
                 <h3>
                     You have questions, ask away and get your answers
                 </h3>
@@ -133,16 +133,16 @@
                     </select>
                     <textarea name="your message" cols="30" rows="10" placeholder="Your message ..."></textarea>
                 </form>
-                <button>
+                <button id="clear" class="form">
                     <img src="../assets/images/x.png" alt="x">
                     Clear
                 </button>
-                <button>
+                <button id="Submit" class="form">
                     <img src="../assets/images/mail.png" alt="mail">
                     Submit
                 </button>
             </section>
-            <section id="info">
+            <section id="info" class="green">
                 <h2>
                     our history
                 </h2>
@@ -152,7 +152,7 @@
                       We wanted to build a gym that was more t....
                 </p>
             </section>
-            <section id="memberships">
+            <section id="memberships" class="gray">
                 <h3>
                     Our Activities
                 </h3>
@@ -220,7 +220,7 @@
                 </ul>
             </section>
         </main>
-        <footer>
+        <footer class="green">
             <p>
                 Copyright © 2023 MegaRocket SA. All rights reserved.
             </p>
