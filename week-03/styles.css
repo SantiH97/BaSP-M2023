@@ -1,0 +1,40 @@
+ :root {
+    --blue: #003867;
+    --green: #AACE9B;
+    --gray: #D9D9D9;
+    --side-bar-green: #E5F2ED;
+    --nav-green: #51A884;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Mulish';
+    src: url('../assets/fonts/Mulish/Mulish-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+body {
+    font-family: 'Roboto', sans-serif;
+}
+nav {
+    background-color: var(--nav-green);
+}
+aside {
+    background-color: var(--side-bar-green);
+}
+h2 {
+    font-family: 'Mulish', sans-serif;
+}
+.blue-section {
+    background-color: var(--blue);
+}
+.green-section {
+    background-color: var(--green);
+}
+.gray-section {
+    background-color: var(--gray);
+}
