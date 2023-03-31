@@ -72,6 +72,12 @@ a {
 a:visited {
     color: white;
 }
+form {
+    display: inline-block;
+}
+textarea {
+    display: inline-block;
+}
 .blue-section {
     background-color: var(--blue);
 }
@@ -191,7 +197,6 @@ a:visited {
     margin-right: 19.99px;
 }
 .logo-in-right {
-    display: inline-block;
     margin-right: 82.95px;
     margin-left: 193.87px;
     margin-top: 16px;
@@ -218,6 +223,8 @@ a:visited {
 .logo-less > h4 {
     background-color: var(--button-green);
     border: solid black 1px;
+    border-radius: 5px;
+    box-shadow: 1px 4px 4px 0 #849F78;
     width: 342.77px;
     height: 67px;
     padding-left: 36px;
@@ -225,7 +232,7 @@ a:visited {
     padding-bottom: 16px;
 }
 #app-h4 {
-    padding-right: 13.77px;
+    padding-right: 10.77px;
 }
 #me-h4 {
     padding-right: 65.77px;
@@ -248,4 +255,18 @@ a:visited {
 #suggestions {
     margin-bottom: 22px;
 }
-
+#form {
+    height: 515px;
+    display: inline-block;
+}
+#form > h3 {
+    font-size: 60px;
+    margin-left: 80px;
+    margin-right: 53px;
+    margin-top: 42px;
+    margin-bottom: 18px;
+}
+.input {
+    display: block;
+    width: 392.74px;
+}

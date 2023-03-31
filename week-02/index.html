@@ -145,21 +145,23 @@
                     You have questions, ask away and get your answers
                 </h3>
                 <form>
-                    <input id="name-input" class="input" type="text" placeholder="Name">
-                    <input id="surname-input" class="input" type="text" placeholder="Surname">
-                    <input id="e-mail-input" class="input" type="text" placeholder="E-mail address">
-                    <select id="motive-select" name="motive">
-                        <option value="" disabled selected>Select a motive</option>
-                        <option value="memberships and costs">
-                            I want to know about memberships and costs.
-                        </option>
-                        <option value="suggestion/enquiry">
-                            I want to submit a suggestion/enquiry.
-                        </option>
-                        <option value="submit a complain">
-                            I want to submit a complain.
-                        </option>
-                    </select>
+                    <div id="small-input">
+                        <input id="name-input" class="input" type="text" placeholder="Name">
+                        <input id="surname-input" class="input" type="text" placeholder="Surname">
+                        <input id="e-mail-input" class="input" type="text" placeholder="E-mail address">
+                        <select id="motive-select" name="motive" class="input">
+                            <option value="" disabled selected>Select a motive</option>
+                            <option value="memberships and costs">
+                                I want to know about memberships and costs.
+                            </option>
+                            <option value="suggestion/enquiry">
+                                I want to submit a suggestion/enquiry.
+                            </option>
+                            <option value="submit a complain">
+                                I want to submit a complain.
+                            </option>
+                        </select>
+                    </div>
                     <textarea name="your message" cols="30" rows="10" placeholder="Your message ..."></textarea>
                 </form>
                 <button id="clear" class="form">
