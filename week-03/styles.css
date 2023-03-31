@@ -209,7 +209,8 @@ textarea {
     margin-left: 193.87px;
     margin-top: 16px;
     position: relative;
-    right: 0;
+    right: 0px;
+    top: 80px;
     float: right;
 }
 #people {
@@ -295,6 +296,7 @@ textarea {
 ::placeholder {
     color: #49A37B;
     font-family: 'Roboto';
+    font-size: 14px;
 }
 #name-input {
     margin-bottom: 21px;
@@ -346,4 +348,17 @@ textarea {
 #info > h2 {
     padding-top: 19px;
     margin-left: 48px;
+}
+#memberships {
+    height: 360px;
+    font-size: 24px;
+}
+.violet-h {
+    color: #373867;
+    border: solid #373867;
+    height: 42px;
+}
+.membership-div {
+    display: inline-block;
+    margin-left: 58.56px;
 }
