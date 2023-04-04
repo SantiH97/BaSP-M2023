@@ -22,6 +22,8 @@
 body {
     width: 1512px;
     font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: auto;
     color: white;
 }
 header {
@@ -67,13 +69,14 @@ form {
     display: inline-block;
 }
 textarea {
-    width: 745px;
-    height: 174.76px;
-    margin-right: 100px;
-    margin-left: 97.26px;
     padding-top: 10px;
     padding-left: 12px;
+    width: 745px;
+    height: 174.76px;
+    border-radius: 4px;
     display: block;
+    position: relative;
+    top: 40px;
 }
 footer {
     font-size: 32px;
@@ -100,19 +103,24 @@ footer {
     margin-right: 34px;
     margin-left: 23px;
     width: 370px;
-    border: solid black;
+    height: auto;
+    border: solid black 1px;
     font-size: 32px;
     text-align: center;
     text-transform: uppercase;
     background-color: var(--nav-green);
+}
+.padding {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .sidebar-img {
     display: inline-block;
 }
 #nav-menu {
     display: inline-block;
+    font-size: 40px;
     color: black;
-    font-size: 32px;
 }
 .sidebar-img {
     padding-bottom: 54px;
@@ -126,13 +134,13 @@ footer {
     width: 61%;
     display: inline-block;
     position: relative;
-    left: 40px;
+    left: 20px;
     font-size: 27px;
     font-family: 'Roboto', sans-serif;
     text-align: left;
     text-transform: capitalize;
 }
-.side-li {
+#text-align li {
     margin-bottom: 20px;
     padding-bottom: 54px;
     line-height: normal;
@@ -143,25 +151,29 @@ footer {
     color: black;
 }
 #home {
+    height: 580px;
     font-size: 32px;
 }
 #Mulish {
+    margin: 0;
     padding-top: 34px;
     font-size: 42px;
     font-family: 'Mulish', sans-serif;
+    font-weight: 800;
     vertical-align: top;
 }
 #Mulish-h3 {
-    padding-top: 9px;
-    padding-bottom: 32px;
+    padding-top: 0px;
+    padding-bottom: 20px;
     font-size: 32px;
+    font-weight: 600;
 }
 #left-text {
     margin-left: 80px;
     display: inline-block;
 }
 #fit-dude {
-    margin-top: 115px;
+    margin-top: 150px;
     margin-bottom: 118px;
     margin-right: 63px;
     margin-left: 64px;
@@ -173,7 +185,10 @@ footer {
     width: 1034px;
 }
 .home-p {
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-size: 23px;
+    font-weight: 400;
     line-height: 50px;
 }
 /* ---------------------------------- */
@@ -181,7 +196,7 @@ footer {
     background-color: var(--green);
 }
 #options {
-    height: 690px;
+    height: 710px;
     font-size: 26px;
 }
 .options-img {
@@ -189,12 +204,16 @@ footer {
     height: 110px;
 }
 .top2 {
+    margin: 0;
     margin-left: 80px;
+    padding-top: 30px;
     width: 1300px;
     height: 350px;
 }
 .bottom2 {
+    margin: 0;
     margin-left: 80px;
+    padding-bottom: 40px;
     width: 1340px;
     height: 350px;
 }
@@ -213,12 +232,21 @@ footer {
     border: solid black 1px;
     border-radius: 5px;
     box-shadow: 1px 4px 4px 0 #849F78;
+    font-weight: 600;
     text-align: left;
     background-color: var(--button-green);
 }
+.logo-less p {
+    line-height: 35px;
+    width: 385px;
+}
+.right {
+    position: relative;
+    left: 100px;
+}
 #problem-p {
     margin-right: 0;
-    width: 600px;
+    width: 510px;
 }
 #problem-h4 {
     text-align: left;
@@ -240,6 +268,7 @@ footer {
     margin-right: 53px;
     margin-left: 80px;
     font-size: 60px;
+    font-weight: 400;
 }
 .input {
     margin-top: 40px;
@@ -259,6 +288,7 @@ footer {
 select option {
     width: 400px;
     border-radius: 5px;
+    display: inline-block;
 }
 ::placeholder {
     font-size: 14px;
@@ -275,6 +305,8 @@ select option {
     border-width: 2px;
     outline: solid black 3px;
     display: inline;
+    position: relative;
+    top: 30px;
     font-size: 37px;
     background-color: #49A37B;
 }
@@ -288,17 +320,22 @@ select option {
 #info {
     overflow-x: hidden;
     font-size: 50px;
+    font-weight: 600;
+    line-height: 59px;
 }
 #info > p {
-    margin-top: 7px;
+    margin-top: 17px;
     margin-bottom: 43px;
     margin-right: 70px;
     margin-left: 70px;
+    width: 1330px;
 }
 #info > h2 {
     margin-top: 20px;
     margin-bottom: 0px;
     margin-left: 50px;
+    font-size: 50px;
+    font-weight: 600;
 }
 #memberships-choices {
     max-height: 360px;
@@ -310,18 +347,22 @@ select option {
     margin-top: 71px;
     padding-top: 8px;
     padding-bottom: 8px;
-    width: 300px;
+    padding-left: 10px;
+    width: 320px;
     border: solid #373867;
     border-radius: 5px;
     overflow-x: hidden;
-    text-align: center;
+    font-weight: 500;
+    text-align: left;
     color: #373867;
 }
 .membership-l {
-    width: 220px;
+    width: 300px;
     display: inline-block;
     position: relative;
     left: 50px;
+    font-weight: 550;
+    line-height: 28px;
     vertical-align: top;
 }
 .whole-l {
@@ -331,12 +372,18 @@ select option {
     font-size: 24px;
     vertical-align: top;
 }
+.small-h4 {
+    width: 260px;
+}
 #margin {
     margin-right: 50px;
-    margin-left: 100px;
+    margin-left: 25px;
 }
 #activities {
     width: auto;
+}
+#classic {
+    width: 260px;
 }
 #footer-p {
     width: 765px;

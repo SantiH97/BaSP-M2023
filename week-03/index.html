@@ -25,16 +25,16 @@
             </h3>
             <img id="in-aside" src="../assets/images/hamburguer-menu.png" alt="Hamburguer menu">
             <nav>
-                <h4 class="nav-h4">
+                <h4 class="nav-h4 padding">
                     <a href="#home">home</a>
                 </h4>
-                <h4 class="nav-h4">
+                <h4 class="nav-h4 padding">
                     sign up
                 </h4>
-                <h4 class="nav-h4">
+                <h4 class="nav-h4 padding">
                     log in
                 </h4>
-                <h4 class="nav-h4">
+                <h4 class="nav-h4 padding">
                     <a href="#info">info</a>
                 </h4>
                 <div class="nav-h4">
@@ -48,14 +48,14 @@
                             src="../assets/images/road-sign.png" alt="Road sign">
                     </div>
                     <ul id="text-align">
-                        <li class="side-li">
+                        <li>
                             information@un
                             titled.tld
                         </li>
-                        <li class="side-li">
+                        <li>
                             (000) 000-0000
                         </li>
-                        <li class="side-li">
+                        <li>
                             1234 Somewhere Road #8254Nashville, TN 00000-0000
                         </li>
                     </ul>
@@ -97,9 +97,9 @@
                              From basic to premium, we have options for every budget and level of commitment.
                         </p>
                     </div>
-                    <img class="options-img" src="../assets/images/star-rectangle.png"
+                    <img class="options-img right" src="../assets/images/star-rectangle.png"
                     alt="Rectangle with a star">
-                    <div class="logo-less">
+                    <div class="logo-less right">
                         <h4>
                             Our memberships
                         </h4>
@@ -121,8 +121,8 @@
                              We offer a range of benefits to help you reach your fitness potential.
                         </p>
                     </div>
-                    <img class="options-img" src="../assets/images/dialogue.png" alt="dialogue scuareish doohickey">
-                    <div class="logo-less">
+                    <img class="options-img right" src="../assets/images/dialogue.png" alt="dialogue scuareish doohickey">
+                    <div class="logo-less right">
                         <h4 id="problem-h4">
                             Suggestions
                         </h4>
@@ -138,12 +138,12 @@
                 <h3>
                     You have questions, ask away and get your answers
                 </h3>
-                <div>
-                    <form>
-                        <input class="input" type="text" placeholder="Name">
-                        <input class="input" type="text" placeholder="Surname">
-                        <input class="input" type="text" placeholder="E-mail address">
-                        <select name="motive" class="input">
+                <form>
+                    <div>
+                        <input class="input" type="text" placeholder="Name" required>
+                        <input class="input" type="text" placeholder="Surname" required>
+                        <input class="input" type="email" placeholder="E-mail address" required>
+                        <select class="input" name="motive">
                             <option value="" disabled selected>Select a motive</option>
                             <option value="memberships and costs">
                                 I want to know about memberships and costs.
@@ -155,19 +155,19 @@
                                 I want to submit a complain.
                             </option>
                         </select>
-                    </form>
-                </div>
-                <div>
-                    <textarea name="your message" cols="30" rows="10" placeholder="Your message ..."></textarea>
-                    <button class="form-btn">
-                        <img id="x" src="../assets/images/Vector.svg" alt="x">
-                        Clear
-                    </button>
-                    <button class="form-btn">
-                        <img id="mail" src="../assets/images/mail.png" alt="mail">
-                        Send
-                    </button>
-                </div>
+                    </div>
+                    <div>
+                        <textarea name="your message" cols="30" rows="10" placeholder="Your message ..."></textarea>
+                        <button class="form-btn" type="reset">
+                            <img id="x" src="../assets/images/Vector.svg" alt="x">
+                            Clear
+                        </button>
+                        <button class="form-btn" type="submit">
+                            <img id="mail" src="../assets/images/mail.png" alt="mail">
+                            Send
+                        </button>
+                    </div>
+                </form>
             </section>
             <section id="info" class="green-section">
                 <h2>
@@ -199,12 +199,12 @@
                             Boxing
                         </li>
                         <li>
-                            Weightlifting
+                            Body Buliding
                         </li>
                     </ol>
                 </div>
                 <div class="whole-l">
-                    <h4 class="violet-h">
+                    <h4 class="violet-h small-h4">
                         <img src="../assets/images/black-dot.png" alt="black dot">
                         Black Membership
                     </h4>
@@ -219,16 +219,16 @@
                             Personalized follow up with personal trainer
                         </li>
                         <li>
-                            Grid display
+                            Displayed schedule
                         </li>
                     </ul>
                 </div>
                 <div class="whole-l">
-                    <h4 class="violet-h">
+                    <h4 class="violet-h small-h4">
                         <img src="../assets/images/white-dot.png" alt="white dot">
                         Classic Membership
                     </h4>
-                    <ul class="membership-l">
+                    <ul id="classic" class="membership-l">
                         <li>
                             Free pass to weights room
                         </li>
@@ -242,7 +242,7 @@
                 </div>
                 <div class="whole-l">
                     <h4 class="violet-h">
-                        <img src="../assets/images/white-dot.png" alt="white dot">
+                        <img src="../assets/images/black-dot.png" alt="black dot">
                         Only Classes Membership
                     </h4>
                     <ul class="membership-l">
