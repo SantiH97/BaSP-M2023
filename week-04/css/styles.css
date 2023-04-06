@@ -1,0 +1,21 @@
+:root {
+    --blue: #373867;
+    --green: #AACE9B;
+    --gray: #D9D9D9;
+    --side-bar-green: #E5F2ED;
+    --nav-green: #51A884;
+    --button-green: #88A47C;
+}
+@font-face {
+    font-family:'Roboto-light';
+    src: url('../../assets/fonts/Roboto/Roboto-Thin.ttf') format('truetype');
+  }
+@font-face {
+    font-family:'Roboto';
+    src: url('../../assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+  }
+@font-face {
+    font-family:'Mulish';
+    src: url('../../assets/fonts/Mulish/Mulish-VariableFont_wght.ttf') format('truetype');
+  }
