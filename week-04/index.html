@@ -5,9 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../assets/icons/weight.ico">
-        <link rel="stylesheet" href="../week-03-test/css/styles.css">
-        <link rel="stylesheet" href="../week-03-test/css/reset.css">
-        <link rel="stylesheet" href="../week-03-test/css/small-reset.css">
+        <link rel="stylesheet" href="../week-04/css/reset.css">
+        <link rel="stylesheet" href="../week-04/css/small-reset.css">
+        <link rel="stylesheet" href="../week-04/css/styles.css">
         <title>
             MegaRocket
         </title>
@@ -93,63 +93,64 @@
             </section>
             <div id="options" class="green-section">
                 <div>
-                    <img class="options-img" src="../assets/images/ticked-rectangle.png" alt="Rectangle with a tick">
                     <div class="logo-less">
+                        <img class="options-img" src="../assets/images/ticked-rectangle.png" alt="Rectangle with a tick">
                         <h4>
                             Make an Appointment
                         </h4>
-                        <p>
-                            Choose the membership plan that fits your lifestyle and fitness goals.
-                            From basic to premium, we have options for every budget and level of commitment.
-                        </p>
                     </div>
+                    <p>
+                        Choose the membership plan that fits your lifestyle and fitness goals.
+                        From basic to premium, we have options for every budget and level of commitment.
+                    </p>
                 </div>
                 <div>
-                    <img class="options-img" src="../assets/images/star-rectangle.png"
-                    alt="Rectangle with a star">
                     <div class="logo-less">
+                        <img class="options-img" src="../assets/images/star-rectangle.png" alt="Rectangle with a star">
                         <h4>
                             Our memberships
                         </h4>
-                        <p>
-                            Choose the membership plan that fits your lifestyle and fitness goals.
-                            From basic to premium, we have options for every budget and level of commitment.
-                        </p>
                     </div>
+                    <p>
+                        Choose the membership plan that fits your lifestyle and fitness goals.
+                        From basic to premium, we have options for every budget and level of commitment.
+                    </p>
                 </div>
-                <div class="problem-div">
-                    <img class="options-img" src="../assets/images/people.png"
-                        alt="One full bloke and two half blokes to either side">
+                <div>
                     <div class="logo-less">
+                        <img class="options-img" src="../assets/images/people.png"
+                        alt="One full bloke and two half blokes to either side">
                         <h4>
                             Become a Member
                         </h4>
-                        <p>
-                            Join our fitness community and take advantage of all the perks of being a member.
-                            We offer a range of benefits to help you reach your fitness potential.
-                        </p>
                     </div>
+                    <p>
+                        Join our fitness community and take advantage of all the perks of being a member.
+                        We offer a range of benefits to help you reach your fitness potential.
+                    </p>
                 </div>
-                <div class="problem-div">
-                    <img class="options-img" src="../assets/images/dialogue.png" alt="dialogue scuareish doohickey">
+                <div>
                     <div class="logo-less">
+                        <img class="options-img" src="../assets/images/dialogue.png" alt="dialogue scuareish doohickey">
                         <h4>
                             Suggestions
                         </h4>
-                        <p id="problem-p">
-                            We're always looking for ways to improve our gym experience.
-                            Have a suggestion? We want to hear from you! Share your feedback with us
-                            and help us make our gym the best it can be for our members
-                        </p>
                     </div>
+                    <p id="problem-p">
+                        We're always looking for ways to improve our gym experience.
+                        Have a suggestion? We want to hear from you! Share your feedback with us
+                        and help us make our gym the best it can be for our members
+                    </p>
                 </div>
             </div>
-            <section id="form">
+            <section id="form" class="blue-section">
+                <h2>
+                    contact us
+                </h2>
                 <h3>
                     You have questions, ask away and get your answers
                 </h3>
                 <form>
-                    <div>
                         <input class="input" type="text" placeholder="Name" required>
                         <input class="input" type="text" placeholder="Surname" required>
                         <input class="input" type="email" placeholder="E-mail address" required>
@@ -165,18 +166,17 @@
                                 I want to submit a complain.
                             </option>
                         </select>
-                    </div>
-                    <div>
                         <textarea name="your message" cols="30" rows="10" placeholder="Your message ..."></textarea>
-                        <button class="form-btn" type="reset">
-                            <img id="x" src="../assets/images/Vector.svg" alt="x">
-                            Clear
-                        </button>
-                        <button class="form-btn" type="submit">
-                            <img id="mail" src="../assets/images/mail.png" alt="mail">
-                            Send
-                        </button>
-                    </div>
+                        <div id="buttons">
+                            <button class="form-btn" type="reset">
+                                <img id="x" src="../assets/images/Vector.svg" alt="x">
+                                Clear
+                            </button>
+                            <button class="form-btn" type="submit">
+                                <img id="mail" src="../assets/images/mail.png" alt="mail">
+                                Send
+                            </button>
+                        </div>
                 </form>
             </section>
             <section id="info" class="green-section">
@@ -190,12 +190,12 @@
                 </p>
             </section>
             <section class="gray-section">
-                <div id="margin" class="whole-l">
-                    <h3 id="activities" class="violet-h">
+                <div id="activities" class="whole-list">
+                    <h3 class="violet-h">
                         <img class="color-dot" src="../assets/images/white-dot.png" alt="white dot">
                         Our Activities
                     </h3>
-                    <ol class="membership-l">
+                    <ol class="membership-list">
                         <li>
                             Crossfit
                         </li>
@@ -213,12 +213,12 @@
                         </li>
                     </ol>
                 </div>
-                <div class="whole-l">
+                <div class="whole-list">
                     <h4 class="violet-h small-h4">
                         <img src="../assets/images/black-dot.png" alt="black dot">
                         Black Membership
                     </h4>
-                    <ul class="membership-l">
+                    <ul class="membership-list">
                         <li>
                             Free access to bb class
                         </li>
@@ -233,12 +233,12 @@
                         </li>
                     </ul>
                 </div>
-                <div class="whole-l">
+                <div class="whole-list">
                     <h4 class="violet-h small-h4">
                         <img src="../assets/images/white-dot.png" alt="white dot">
                         Classic Membership
                     </h4>
-                    <ul id="classic" class="membership-l">
+                    <ul id="classic" class="membership-list">
                         <li>
                             Free pass to weights room
                         </li>
@@ -250,12 +250,12 @@
                         </li>
                     </ul>
                 </div>
-                <div class="whole-l">
+                <div class="whole-list">
                     <h4 class="violet-h">
                         <img src="../assets/images/black-dot.png" alt="black dot">
                         Only Classes Membership
                     </h4>
-                    <ul class="membership-l">
+                    <ul class="membership-list">
                         <li>
                             Free pass to classes with prior appointment
                         </li>
