@@ -380,6 +380,7 @@ div.border-scuare {
         padding: 0;
     }
     #options {
+        padding-bottom: 30px;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
@@ -500,9 +501,9 @@ div.border-scuare {
         word-spacing: 30px;
     }
     #memberships-section {
-        padding: 30px;
+        padding: 15px;
         display: flex;
-        align-items: top;
+         flex-flow: wrap;
         justify-content: space-around;
         font-size: 24px;
     }
@@ -516,26 +517,36 @@ div.border-scuare {
     .membership-list {
         padding: 0;
         margin: 0;
-        width: 80%;
+        width: 95%;
         height: 100%;
         font-size: 24px;
         line-height: 1;
+    }
+    .whole-list {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 10px;
+        width: 46%;
+        max-width: 400px;
     }
     .violet-h,
     #activities h3 {
         margin-bottom: 20px;
         width: 100%;
+        max-width: 340px;
     }
     .violet-h,
     #problem-h3.violet-h {
-        width: 80%;
+        width: 94%;
         height: 30%;
         padding-top: 8px;
         padding-bottom: 8px;
-        padding-left: 10px;
+        padding-left: 5px;
+        align-self: flex-start;
         border: solid #373867;
         border-radius: 5px;
         text-align: left;
+        word-spacing: 0.001px;
         color: #373867;
     }
     .violet-h img {
