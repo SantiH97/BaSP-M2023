@@ -58,7 +58,7 @@ aside > div {
     height: 70px;
 }
 aside div h3 {
-    padding-top: 10px;
+    padding-top: 30px;
     font-size: 40px;
     text-align: center;
     color: black;
@@ -71,7 +71,7 @@ aside div img {
     vertical-align: top;
 }
 nav {
-    margin-bottom: 0;
+    margin-top: 20px;
     display: flex;
     height: 100%;
     flex-direction: column;
