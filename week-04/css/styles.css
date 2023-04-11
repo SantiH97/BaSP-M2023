@@ -29,7 +29,7 @@ header {
     height: 15vw;
     max-height: 120px;
     min-height: 120px;
-    text-align: center;
+    text-align: right;
 }
 header > img {
     padding: 35px;
@@ -37,7 +37,7 @@ header > img {
     float: left;
 }
 h1 img {
-    padding-top: 35px;
+    padding: 35px 5% 0 0;
     width: 200px;
     height: 40px;
 }
@@ -398,7 +398,7 @@ div.border-scuare {
         width: 90px;
     }
     #options div p {
-        width: 90%;
+        width: 75%;
         height: 30%;
         max-width: 400px;
         display: flex;
@@ -430,9 +430,6 @@ div.border-scuare {
     }
 }
 @media only screen and (min-width: 1024px) {
-    h1 {
-        margin-left: 80%;
-    }
     main, footer {
         margin-left: 427px;
     }
@@ -458,6 +455,11 @@ div.border-scuare {
     textarea {
         margin-top: 100px;
         max-width: 900px;
+    }
+    #options div p {
+        margin-left: 18%;
+        max-width: 350px;
+        min-width: 250px;
     }
     #form h3 {
         padding-bottom: 0px;
