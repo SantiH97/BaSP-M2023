@@ -304,24 +304,27 @@ div.border-scuare {
     align-items: center;
 }
 .whole-list {
-    width: 60%;
+    width: 200px;
     display: flex;
     flex-flow: column;
-    align-items: center;
+    align-items: flex-start;
     font-size: 15px;
     color: black;
 }
 #activities h3 {
-    padding-top: 40px;
+    padding: 40px 0 0 0;
+    margin: 0;
+    align-self: center;
+    text-align: center;
     font-size: 30px;
 }
 #problem-h3 {
     width: 250px;
 }
 .whole-list ol {
-    padding: 30px 0 50px 100px;
-    font-size: 26px;
-    line-height: 30px;
+    padding: 10px 0 10px 0px;
+    font-size: 16px;
+    line-height: 19px;
 }
 .whole-list ul {
     padding-bottom: 10px;
@@ -331,7 +334,8 @@ div.border-scuare {
     width: 200px;
 }
 .violet-h {
-    padding: 20px 0;
+    padding: 20px 0 20px 0;
+    align-self: center;
 }
 .violet-h img {
     display: none;
@@ -419,14 +423,29 @@ div.border-scuare {
         padding: 0;
         margin: 0;
     }
+    .whole-list {
+        width: 600px;
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .membership-list li {
+        margin-left: 40px;
+        width: 550px;
+    }
+    h4.violet-h {
+        margin-left: 40px;
+        align-self: flex-start;
+    }
+    .whole-list#activities,
     div#activities h3,
-    div#activities ol {
+    div#activities ol,
+    div#activities li {
+        width: 300px;
         font-size: 40px;
         line-height: 47px;
     }
-    .whole-list {
-        font-size: 26px;
-        line-height: 30px;
+    div#activities ol {
+        padding: 20px 0 40px 30px;
     }
 }
 @media only screen and (min-width: 1024px) {
@@ -514,9 +533,20 @@ div.border-scuare {
         font-size: 24px;
     }
     #activities h3#problem-h3,
-    #activities ol.membership-list {
+    #activities ol.membership-list li {
+        padding: 0;
+        margin: 0;
+        width: auto;
         font-size: 24px;
         line-height: normal;
+    }
+    #activities ol.membership-list li {
+        width: 150px;
+    }
+    .membership-list li,
+    .violet-h {
+        width: auto;
+        font-size: 24px;
     }
     .whole-list,
     .whole-list ol,
@@ -528,7 +558,7 @@ div.border-scuare {
     .membership-list {
         padding: 0;
         margin: 0;
-        width: 95%;
+        width: auto;
         height: 100%;
         font-size: 24px;
         line-height: normal;
@@ -541,13 +571,13 @@ div.border-scuare {
     .violet-h,
     #activities h3 {
         margin-bottom: 20px;
-        width: 100%;
+        width: auto;
         max-width: 340px;
     }
     .violet-h,
     #problem-h3.violet-h {
         padding: 8px 0 8px 5px;
-        width: 94%;
+        width: auto;
         height: 30%;
         align-self: flex-start;
         border: solid #373867;
