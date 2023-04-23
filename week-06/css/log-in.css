@@ -54,7 +54,7 @@ p {
     margin: 30px 15% ;
     width: 70%;
 }
-#error {
+.error {
     padding: 5px 10px;
     margin: 10px 38.5%;
     width: 23%;
@@ -63,7 +63,7 @@ p {
     color: white;
     background-color: var(--error-red);
 }
-#error-img {
+.error-img {
     width: 20px;
     height: 20px;
     float: left;

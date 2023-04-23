@@ -1,33 +1,55 @@
 var emailInput = document.getElementById('email-input');
+var passwordInput = document.getElementById('password-input');
+var logInBtn = document.querySelector('#continue-btn');
 var parent = document.querySelector('#error-div');
+var loginBorder = document.querySelector('#email-input');
+var passwordBorder = document.querySelector('#password-input');
+var passwordParent = document.querySelector('#password-error-div');
+var passwordDaddy = passwordParent.parentNode;
 var daddy = parent.parentNode;
+var passwordErrorImg = document.createElement("img");
 var errorBtn = document.createElement("button");
 var errorImg = document.createElement("img");
-var loginInput = document.querySelector('.login-input');
+var passwordErrorBtn = document.createElement("button");
 var lastCharIndex = emailInput.value.indexOf(emailInput.value.lenght -1);
-
-var passwordInput = document.getElementById('password-input');
-passwordInput.addEventListener("input", mask);
-
-var logInBtn = document.querySelector('#continue-btn');
-logInBtn.addEventListener("click", function() {
-  alertFn();
-  validatePassword();
-});
-
-errorBtn.setAttribute("id", "error");
-errorImg.setAttribute("id", "error-img");
+var emailPassed = false;
+var passwordPassed = false;
+var beginningEmailFlag = true;
+var beginningPasswordFlag = true;
+errorBtn.className = ("error");
+passwordErrorBtn.className = ("error");
+errorImg.className = ("error-img");
+passwordErrorImg.className = ("error-img");
+passwordErrorImg.setAttribute("src", "../../assets/images/error.png");
 errorImg.setAttribute("src", "../../assets/images/error.png");
 
-emailInput.addEventListener("blur", validateEmail);
-emailInput.addEventListener("focus", captainHook);
+logInBtn.addEventListener("click", alertFn);
 
-function captainHook(){
-  if (daddy.childElementCount === 2) {
-    return;
-  } else {
+emailInput.onblur = function () {
+  validateEmail();
+}
+passwordInput.onblur = function() {
+  validatePassword();
+};
+emailInput.onfocus = function () {
+  loginBorder.style.borderBottom = "2px solid var(--gray)"
+  if (beginningEmailFlag === false) {
+    captainHook();
+  }
+};
+passwordInput.onfocus = function() {
+  passwordBorder.style.borderBottom = "2px solid var(--gray)";
+  if (beginningPasswordFlag === false) {
+    captainHook();
+  }
+};
+
+function captainHook() {
+  if (errorBtn) {
     daddy.removeChild(errorBtn);
-    return;
+  }
+  if (passwordErrorBtn) {
+    passwordDaddy.removeChild(passwordErrorBtn);
   }
 }
 
@@ -39,81 +61,111 @@ function validateEmail() {
   var symbolRegex = /[^a-zA-Z0-9.]/;
   var testRegex = /^[^@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
   if (middle.includes(".")) {
-    errorBtn.innerHTML = "Invalid Email";
+    errorBtn.innertext = "Invalid Email";
     daddy.appendChild(errorBtn);
     errorBtn.appendChild(errorImg);
-    loginInput.style.borderBottom = "2px solid var(--error-red)";
+    loginBorder.style.borderBottom = "2px solid var(--error-red)";
+    emailPassed = false;
+    beginningEmailFlag = false;
     return;
   } else if (emailInput.value.trim() === "") {
-    errorBtn.innerHTML = "Email required";
+    errorBtn.innerText = "Email required";
     daddy.appendChild(errorBtn);
     errorBtn.appendChild(errorImg);
-    loginInput.style.borderBottom = "2px solid var(--error-red)";
+    loginBorder.style.borderBottom = "2px solid var(--error-red)";
+    emailPassed = false;
+    beginningEmailFlag = false;
     return;
   } else if (testRegex.test(emailInput.value)) {
      if (emailInput.value.includes(" ")) {
-      errorBtn.innerHTML = "Extra space detected";
+      errorBtn.innerText = "Extra space detected";
       daddy.appendChild(errorBtn);
       errorBtn.appendChild(errorImg);
-      loginInput.style.borderBottom = "2px solid var(--error-red)";
+      loginBorder.style.borderBottom = "2px solid var(--error-red)";
+      emailPassed = false;
+      beginningEmailFlag = false;
       return;
     } else if (emailInput.value.indexOf('@') < 2) {
-      errorBtn.innerHTML = "Email too short";
+      errorBtn.innerText = "Email too short";
       daddy.appendChild(errorBtn);
       errorBtn.appendChild(errorImg);
-      loginInput.style.borderBottom = "2px solid var(--error-red)";
+      loginBorder.style.borderBottom = "2px solid var(--error-red)";
+      emailPassed = false;
+      beginningEmailFlag = false;
       return;
     } else if (symbolRegex.test(emailInput.value.slice(emailInput.value.indexOf('@') +1 ,
       emailInput.value.indexOf('.'))) ||
       (symbolRegex.test(emailInput.value.slice(0, emailInput.value.indexOf('@')))) ||
       (symbolRegex.test(emailInput.value.slice(emailInput.value.indexOf('.') +5)))) {
-      errorBtn.innerHTML = "Invalid character";
+      errorBtn.innerText = "Invalid character";
       daddy.appendChild(errorBtn);
       errorBtn.appendChild(errorImg);
-      loginInput.style.borderBottom = "2px solid var(--error-red)";
+      loginBorder.style.borderBottom = "2px solid var(--error-red)";
+      emailPassed = false;
+      beginningEmailFlag = false;
       return;
     } else if (!dot.test(emailInput.value)) {
-      errorBtn.innerHTML = "Invalid Email";
+      errorBtn.innerText = "Invalid Email";
       daddy.appendChild(errorBtn);
       errorBtn.appendChild(errorImg);
-      loginInput.style.borderBottom = "2px solid var(--error-red)";
+      loginBorder.style.borderBottom = "2px solid var(--error-red)";
+      emailPassed = false;
+      beginningEmailFlag = false;
       return;
-    } else if (daddy.childElementCount > 2){
-      loginInput.style.borderBottom = "2px solid var(--green)"
-      daddy.removeChild(errorBtn);
+    } else if (emailPassed === true){
+      loginBorder.style.borderBottom = "2px solid var(--green)"
+        if (!beginningEmailFlag){
+          daddy.removeChild(errorBtn);
+        }
       return;
     } else if (emailInput.value.length >= 30) {
-      errorBtn.innerHTML = "TLDR Lol";
+      errorBtn.innerText = "TLDR Lol";
       daddy.appendChild(errorBtn);
       errorBtn.appendChild(errorImg);
-      loginInput.style.borderBottom = "2px solid var(--error-red)";
+      loginBorder.style.borderBottom = "2px solid var(--error-red)";
+      emailPassed = false;
+      beginningEmailFlag = false;
+      return;
     } else {
-      loginInput.style.borderBottom = "2px solid var(--green)"
+      loginBorder.style.borderBottom = "2px solid var(--green)"
+      emailPassed = true;
+      beginningEmailFlag = true;
       return;
     }
   } else {
-    errorBtn.innerHTML = "Invalid Email";
+    errorBtn.innerText = "Invalid Email";
     daddy.appendChild(errorBtn);
     errorBtn.appendChild(errorImg);
-    loginInput.style.borderBottom = "2px solid var(--error-red)";
+    loginBorder.style.borderBottom = "2px solid var(--error-red)";
     return;
   }
 }
 
-
-function mask() {
-    var maskedValue = "";
-    for (var i = 0; i < passwordInput.value.length; i++) {
-      maskedValue += "*";
-    }
-    passwordInput.value = maskedValue;
-    return;
-  };
-
 function alertFn () {
-  alert ("Email: " + emailInput.value + "\n" + "Password: " + passwordInput.value);
-  return;
+  if (emailPassed === true && passwordPassed === true) {
+  alert ("Email: " + emailInput.value + "\n" + "Valid Password ");
+  } else if (emailPassed === false && passwordPassed === true) {
+    alert ("Error: " + errorBtn.textContent + "\n" + "Valid Password");
+  } else if (emailPassed === true && passwordPassed === false) {
+    alert ("Email: " + emailInput.value + "\n" + "Error: " + passwordErrorBtn.innerText);
+  } else if (emailPassed === false && passwordPassed === false) {
+    alert ("Error: " + errorBtn.textContent + "\n" + "Error: " + passwordErrorBtn.innerText);
+  } else {
+    alert ("Error: Email Required" + "\n" + "Error: Password Required");
+  }
 }
+
 function validatePassword() {
-  
-}
+    if (passwordInput.value.length >= 8) {
+      passwordBorder.style.borderBottom = "2px solid var(--green)"
+      passwordPassed = true;
+    } else {
+      passwordErrorBtn.innerText = "Invalid Password";
+      passwordDaddy.appendChild(passwordErrorBtn);
+      passwordErrorBtn.appendChild(passwordErrorImg);
+      passwordBorder.style.borderBottom = "2px solid var(--error-red)";
+      passwordPassed = false;
+      beginningPasswordFlag = false;
+    }
+  }
+

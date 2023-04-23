@@ -21,9 +21,11 @@
     </header>
     <main>
         <section>
-            <button id="back-btn" >
-                <img src="../../assets/images/close-back.png" alt="back">
-            </button>
+            <a href="javascript:history.back()">
+                <button id="back-btn" >
+                    <img src="../../assets/images/close-back.png" alt="back">
+                </button>
+            </a>
             <h2>Sign in</h2>
             <form>
                 <div class="input-div">
@@ -32,7 +34,7 @@
                 </div>
                 <div class="input-div">
                     <img src="../../assets/images/password-lock.png" alt="Password lock">
-                    <input id="password-input" class="login-input" type="text">
+                    <input id="password-input" class="login-input" type="password">
                 </div>
                 <p>
                     Have you forgotten the password?
@@ -44,15 +46,19 @@
                 <p>
                     Don't have an account?
                 </p>
-                <p>
-                    Click here to become a member.
-                </p>
+                <a href="../views/sign-up.html">
+                    <p>
+                        Click here to become a member.
+                    </p>
+                </a>
             </form>
             <button id="continue-btn">
                 Log in
             </button>
         </section>
         <div id="error-div">
+        </div>
+        <div id="password-error-div">
         </div>
     </main>
 </body>
