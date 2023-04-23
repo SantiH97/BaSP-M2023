@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/small-reset.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/registration-common.css">
+    <link rel="stylesheet" href="../css/log-in.css">
+    <script defer src="../js/log-in.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="blue-section">
+        <h1>
+            <img src="../../assets/images/megarocket-logo.png" alt="MegaRocket">
+        </h1>
+    </header>
+    <main>
+        <section>
+            <button id="back-btn" >
+                <img src="../../assets/images/close-back.png" alt="back">
+            </button>
+            <h2>Sign in</h2>
+            <form>
+                <div class="input-div">
+                    <img src="../../assets/images/email-envelope.png" alt="Email envelope">
+                    <input id="email-input" class="login-input" type="text">
+                </div>
+                <div class="input-div">
+                    <img src="../../assets/images/password-lock.png" alt="Password lock">
+                    <input id="password-input" class="login-input" type="text">
+                </div>
+                <p>
+                    Have you forgotten the password?
+                </p>
+                <div>
+                    <input id="checkbox" type="checkbox">
+                    <label for="checkbox">Remember me</label>
+                </div>
+                <p>
+                    Don't have an account?
+                </p>
+                <p>
+                    Click here to become a member.
+                </p>
+            </form>
+            <button id="continue-btn">
+                Log in
+            </button>
+        </section>
+        <div id="error-div">
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,16 @@
+header {
+    height: 15vw;
+    max-height: 120px;
+    min-height: 120px;
+    text-align: right;
+}
+header > img {
+    padding: 35px;
+    width: 50px;
+    float: left;
+}
+h1 img {
+    padding: 35px 5% 0 0;
+    width: 200px;
+    height: 40px;
+}

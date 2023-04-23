@@ -1,0 +1,45 @@
+section {
+    padding: 30px 7%;
+    margin: 40px auto 0px auto;
+    width: 60%;
+    background-color: white;
+}
+form {
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+}
+label {
+    padding-bottom: 10px;
+    color: var(--green);
+}
+.container {
+    margin: 0 20px;
+    width: 40%;
+    display: flex;
+    flex-flow: column;
+}
+.first {
+    margin-top: 6px;
+}
+.register-input {
+    margin-bottom: 30px;
+    width: 80%;
+    height: 45px;
+    border: none;
+    background-color: var(--gray);
+}
+.register-input:focus {
+    outline: none;
+}
+#image-placeholder {
+    margin-bottom: 20px;
+    width: 100px;
+    height: 90px;
+    align-self: center;
+    border-radius: 9999999px;
+    background-color: #f4f4f4;
+}
+#image-placeholder img {
+    margin: 33px;
+}

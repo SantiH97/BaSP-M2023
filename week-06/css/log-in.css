@@ -1,0 +1,70 @@
+section {
+    padding: 10px;
+    margin: 120px auto 0 auto;
+    width: 25%;
+    align-items: center;
+    background-color: white;
+}
+
+form {
+    margin: 20px auto;
+    width: 60%;
+    display: flex;
+    flex-flow: column;
+}
+
+form div img {
+    width: 15px;
+}
+form p:nth-child(3) {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    color: var(--registration-lighter-blue);
+}
+form p:nth-child(6) {
+    font-size: 16px;
+    color: var(--registration-blue);
+}
+form p:nth-child(5) {
+    margin-top: 20px;
+}
+p {
+    text-align: center;
+}
+
+#checkbox:checked {
+    accent-color: var(--green);
+}
+.login-input {
+    width: 80%;
+    margin: 7px 0;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid var(--gray);
+}
+.login-input:focus {
+    outline: none;
+}
+
+#back-btn {
+    float: none;
+    position: static;
+}
+#continue-btn {
+    margin: 30px 15% ;
+    width: 70%;
+}
+#error {
+    padding: 5px 10px;
+    margin: 10px 38.5%;
+    width: 23%;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--error-red);
+}
+#error-img {
+    width: 20px;
+    height: 20px;
+    float: left;
+}
