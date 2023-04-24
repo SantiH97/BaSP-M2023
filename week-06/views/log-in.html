@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/registration-common.css">
     <link rel="stylesheet" href="../css/log-in.css">
     <script defer src="../js/log-in.js"></script>
+    <script defer src="../js/validate-email.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -21,20 +22,20 @@
     </header>
     <main>
         <section>
-            <a href="javascript:history.back()">
+            <a href="../views/index.html">
                 <button id="back-btn" >
                     <img src="../../assets/images/close-back.png" alt="back">
                 </button>
             </a>
-            <h2>Sign in</h2>
+            <h2>Log in</h2>
             <form>
                 <div class="input-div">
                     <img src="../../assets/images/email-envelope.png" alt="Email envelope">
-                    <input id="email-input" class="login-input" type="text">
+                    <input class="login-input email-input" type="text">
                 </div>
                 <div class="input-div">
                     <img src="../../assets/images/password-lock.png" alt="Password lock">
-                    <input id="password-input" class="login-input" type="password">
+                    <input class="login-input password-input" type="password">
                 </div>
                 <p>
                     Have you forgotten the password?

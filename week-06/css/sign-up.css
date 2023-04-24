@@ -6,8 +6,12 @@ section {
 }
 form {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-content: space-around;
+}
+form div div {
+    display: flex;
+    /* justify-content: space-between; */
 }
 label {
     padding-bottom: 10px;
@@ -20,7 +24,7 @@ label {
     flex-flow: column;
 }
 .first {
-    margin-top: 6px;
+    margin-top: 17px;
 }
 .register-input {
     margin-bottom: 30px;
@@ -42,4 +46,34 @@ label {
 }
 #image-placeholder img {
     margin: 33px;
+}
+.hidden {
+    display: none;
+}
+.reveal {
+    color: var(--error-red);
+}
+/* @media only screen and (max-width: 1277px) {
+    form div div {
+        display: contents;
+        justify-content: none;
+    }
+    #image-placeholder {
+        margin-bottom: 20px;
+        width: 100px;
+        height: 90px;
+        align-self: center;
+        border-radius: 9999999px;
+        background-color: #f4f4f4;
+    }
+} */
+.error {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.small {
+    padding:0 5px;
+    font-size: 12px;
 }

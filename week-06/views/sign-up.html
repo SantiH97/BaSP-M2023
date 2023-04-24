@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/registration-common.css">
     <link rel="stylesheet" href="../css/sign-up.css">
+    <script defer src="../js/sign-up.js"></script>
+    <script defer src="../js/validate-email.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -20,45 +22,148 @@
     </header>
     <main>
         <section>
-            <button id="back-btn" >
-                <img src="../../assets/images/close-back.png" alt="back">
-            </button>
-            <h2>Register</h2>
+            <a href="../views/log-in.html">
+                <button id="back-btn" >
+                    <img src="../../assets/images/close-back.png" alt="back">
+                </button>
+            </a>
+            <h2>Sign up</h2>
             <form>
                 <div class="container first">
-                    <label>Name</label>
-                    <input class="register-input" type="text">
-                    <label>Last Name</label>
-                    <input class="register-input" type="text">
-                    <label>Email</label>
-                    <input class="register-input" type="text">
-                    <label>Id</label>
-                    <input class="register-input" type="text">
-                    <label>Birthday</label>
-                    <input class="register-input" type="text">
-                    <label>Password</label>
-                    <input class="register-input" type="text">
+                    <div>
+                        <label>
+                            Name
+                        </label>
+                        <div id="name-error-div" class="error">
+                            <label id="name-error" class="hidden small">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="name" class="register-input" type="text">
+                    <div>
+                        <label>
+                            Last name
+                        </label>
+                        <div id="last-name-error-div" class="error">
+                            <label id="last-name-error" class="hidden small">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="last-name" class="register-input" type="text">
+                    <div>
+                        <label>
+                            Id
+                        </label>
+                        <div id="id-error-div" class="error">
+                            <label id="id-error" class="hidden small">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="id" class="register-input email-input" type="text">
+                    <div>
+                        <label>
+                            Phone Number
+                        </label>
+                        <div id="phone-number-error-div" class="error">
+                            <label id="phone-number-error" class="hidden small">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="phone-number" class="register-input" type="text">
+                    <div>
+                        <label>
+                            Birth Day
+                        </label>
+                        <div id="birth-day-error-div" class="error">
+                            <label id="birth-day-error" class="hidden small">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="birth-day" class="register-input" type="date">
+                    <div>
+                        <label>
+                            Password
+                        </label>
+                        <div id="password-error-div" class="error">
+                            <label id="password-error" class="hidden small">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="password-input" class="register-input" type="password">
                 </div>
                 <div class="container">
-                    <div id="image-placeholder">
+                    <span id="image-placeholder">
                         <img src="../../assets/images/camera.png" alt="camera">
+                    </span>
+                    <div>
+                        <label>
+                            Region
+                        </label>
+                        <div id="region-error-div" class="error">
+                            <label id="region-error" class="hidden small">
+                                Input required
+                            </label>
+                        </div>
                     </div>
-                    <label>Telephone</label>
-                    <input class="register-input" type="text">
-                    <label>Address</label>
-                    <input class="register-input" type="text">
-                    <label>Location</label>
-                    <input class="register-input" type="text">
-                    <label>Postal</label>
-                    <input class="register-input" type="text">
-                    <label>Repeat your password</label>
-                    <input class="register-input" type="text">
+                    <input id="region" class="register-input" type="text">
+                    <div>
+                        <label>
+                            Address
+                        </label>
+                        <div id="address-error-div" class="error">
+                            <label id="address-error" class="hidden small">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="address" class="register-input" type="text">
+                    <div>
+                        <label>
+                            Postal Code
+                        </label>
+                        <div id="postal-code-error-div" class="error">
+                            <label id="postal-code-error" class="hidden small">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="postal-code" class="register-input" type="text">
+                    <div>
+                        <label>
+                            Email
+                        </label>
+                        <div id="email-error-div" class="error">
+                            <label id="email-error" class="hidden small">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="email-input" class="register-input" type="text">
+                    <div>
+                        <label>
+                            Repeat Password
+                        </label>
+                        <div id="repeat-password-error-div" class="error">
+                            <label id="repeat-password-error" class="hidden small">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="repeat-password-input" class="register-input" type="password">
                 </div>
             </form>
         </section>
-        <button id="continue-btn" >
-            continue
-        </button>
+        <a href="../views/log-in.html">
+            <button id="continue-btn" >
+                continue
+            </button>
+        </a>
     </main>
 </body>
 </html>
