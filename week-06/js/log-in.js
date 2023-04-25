@@ -79,4 +79,54 @@ function validatePassword() {
       beginningPasswordFlag = false;
     }
   }
+  function validateEmail() {
+    var middleBeginning = emailInput.value.indexOf('@') + 1;
+    var middleEnd = emailInput.value.lastIndexOf('.');
+    var middle = emailInput.value.substring(middleBeginning, middleEnd);
+    var dot = /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+$/;
+    var symbolRegex = /[^a-zA-Z0-9.]/;
+    var testRegex = /^[^@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+    if (middle.includes(".")) {
+      logInValidationError("Invalid Email");
+    } else if (emailInput.value.trim() === "") {
+      logInValidationError("Email required");
+    } else if (testRegex.test(emailInput.value)) {
+       if (emailInput.value.includes(" ")) {
+        logInValidationError("Extra space detected");
+      } else if (emailInput.value.indexOf('@') < 2) {
+        logInValidationError("Email too short");
+      } else if (symbolRegex.test(emailInput.value.slice(emailInput.value.indexOf('@') +1 ,
+        emailInput.value.indexOf('.'))) ||
+        (symbolRegex.test(emailInput.value.slice(0, emailInput.value.indexOf('@')))) ||
+        (symbolRegex.test(emailInput.value.slice(emailInput.value.indexOf('.') +5)))) {
+        logInValidationError("Invalid character");
+      } else if (!dot.test(emailInput.value)) {
+        logInValidationError("Invalid Email");
+      } else if (emailPassed === true){
+        loginBorder.style.borderBottom = "2px solid var(--green)"
+          if (!beginningEmailFlag) {
+            daddy.removeChild(errorBtn);
+          }
+      } else if (emailInput.value.length >= 30) {
+        logInValidationError("TLDR Lol");
+      } else {
+        logInValidationSuccess();
+      }
+    } else {
+      logInValidationError("Invalid Email");
+    }
+  }
+    function logInValidationError(errorMessage) {
+      errorBtn.innerText = errorMessage;
+      daddy.appendChild(errorBtn);
+      errorBtn.appendChild(errorImg);
+      loginBorder.style.borderBottom = "2px solid var(--error-red)";
+      emailPassed = false;
+      beginningEmailFlag = false;
+    }
+    function logInValidationSuccess() {
+      loginBorder.style.borderBottom = "2px solid var(--green)"
+      emailPassed = true;
+      beginningEmailFlag = true;
+    }
 
