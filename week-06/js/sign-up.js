@@ -55,6 +55,20 @@ var both = true;
 var isEqual = true;
 var isEmail = true;
 var isEmpty = true;
+var isAddress = true;
+var hasError = false;
+
+var nameIsValid = false;
+var lastNameIsValid = false;
+var idIsValid = false;
+var phoneNumberIsValid = false;
+var birthDayIsValid = false;
+var regionIsValid = false;
+var addressIsValid = false;
+var postalCodeIsValid = false;
+var passwordIsValid = false;
+var repeatPasswordIsValid = false;
+var emailIsValid = false;
 // CLASSNAMES----------------------CLASSNAMES-----------------------CLASSNAMES
 var nameInputClassName = 'only-letters';
 var LastNameInputClassName = 'only-letters2';
@@ -67,70 +81,159 @@ var postalCodeInputClassName = 'only-numbers3';
 var passwordInput2ClassName = 'only-passwords';
 var repeatPasswordInputClassName = 'not-equal';
 var emailInputClassName = 'only-emails';
+// ARRS----------------------ARRS-----------------------ARRS
+var errors = [];
+
+var nameArr = ["Name: "];
+var lastNameArr = ["Last name: "];
+var idArr = ["Id: "];
+var phoneArr = ["Phone number: "];
+var birthArr = ["Birth day: "];
+var regionArr = ["Region: "];
+var adressArr = ["Adress: "];
+var postalArr = ["Postal code: "];
+var paswordArr = ["Password: "];
+var repeatArr = ["Repeat password: "];
+var emailArr = ["Email: "];
+
+var successArr = [];
 // BLUR----------------------BLUR-----------------------BLUR
 nameInput.onblur = function() {
-    validateChars(nameInput, nameLabelError, nameErrorDivP, nameInputClassName, !both);
-    validateEmpty(nameInput, nameLabelError);
-    moreThan(nameInput, nameLabelError, nameErrorDivP, 3);
+    validateChars(nameInput, nameLabelError, nameErrorDivP, nameInputClassName, !both, nameArr);
+    validateEmpty(nameInput, nameLabelError, nameArr);
+    moreThan(nameInput, nameLabelError, nameErrorDivP, 3, nameArr);
+    if (hasError) {
+        hasError = false;
+        return;
+    } else {
+        nameIsValid = true;
+        var success = "Name: " + nameInput.value;
+        successArr.push(success);
+    }
 };
 LastNameInput.onblur = function() {
-    validateChars(LastNameInput, LastNameLabelError, LastNameErrorDivP, LastNameInputClassName, !both);
-    validateEmpty(LastNameInput, LastNameLabelError);
-    moreThan(LastNameInput, LastNameLabelError, LastNameErrorDivP, 3);
+    validateChars(LastNameInput, LastNameLabelError, LastNameErrorDivP, LastNameInputClassName, !both, lastNameArr);
+    validateEmpty(LastNameInput, LastNameLabelError, lastNameArr);
+    moreThan(LastNameInput, LastNameLabelError, LastNameErrorDivP, 3, lastNameArr);
+    if (hasError) {
+        hasError = false;
+        return;
+    } else {
+        lastNameIsValid = true;
+        var success = "Last name: " + LastNameInput.value;
+        successArr.push(success);
+    }
 };
 idInput.onblur = function() {
-    validateNumbers(idInput, idLabelError, idErrorDivP, idInputClassName);
-    validateEmpty(idInput, idLabelError);
-    moreThan(idInput, idLabelError, idErrorDivP, 7);
+    validateNumbers(idInput, idLabelError, idErrorDivP, idInputClassName, idArr);
+    validateEmpty(idInput, idLabelError, idArr);
+    moreThan(idInput, idLabelError, idErrorDivP, 7, idArr);
+    if (hasError) {
+        hasError = false;
+        return;
+    } else {
+        idIsValid = true;
+        var success = "id: " + idInput.value;
+        successArr.push(success);
+    }
 };
 phoneNumberInput.onblur = function() {
-    validateNumbers(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDivP, phoneNumberInputClassName);
-    validateEmpty(phoneNumberInput, phoneNumberLabelError);
-    moreThan(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDivP, 10);
-    lessThan(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDivP, 10);
+    validateNumbers(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDivP, phoneNumberInputClassName, phoneArr);
+    validateEmpty(phoneNumberInput, phoneNumberLabelError, phoneArr);
+    moreThan(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDivP, 10, phoneArr);
+    lessThan(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDivP, 10, phoneArr);
+    if (hasError) {
+        hasError = false;
+        return;
+    } else {
+        phoneNumberIsValid = true;
+        var success = "Phone Number: " + phoneNumberInput.value;
+        successArr.push(success);
+    }
 };
 birthDayInput.onblur = function() {
-    validateEmpty(birthDayInput, birthDayLabelError);
+    validateEmpty(birthDayInput, birthDayLabelError, birthArr);
+    if (hasError) {
+        hasError = false;
+        return;
+    } else {
+        birthDayIsValid = true;
+        var success = "Birth day: " + birthDayInput.value;
+        successArr.push(success);
+    }
 };
 RegionInput.onblur = function() {
-    validateEmpty(RegionInput, regionLabelError);
-    moreThan(RegionInput, regionLabelError, regionErrorDivP, 3);
-    validateChars(RegionInput, regionLabelError, regionErrorDivP, RegionInputClassName, both);
+    validateEmpty(RegionInput, regionLabelError, regionArr);
+    moreThan(RegionInput, regionLabelError, regionErrorDivP, 3, regionArr);
+    validateChars(RegionInput, regionLabelError, regionErrorDivP, RegionInputClassName, both, regionArr);
+    if (hasError) {
+        hasError = false;
+        return;
+    } else {
+        regionIsValid = true;
+        var success = "Region: " + RegionInput.value;
+        successArr.push(success);
+    }
 };
 addressInput.onblur = function() {
-    if (addressInput.value.includes(" ")) {
-    var space = addressInput.value.indexOf(" ");
-    var adressArr = [];
-    var first = addressInput.value.slice(0, space);
-    var last = addressInput.value.slice(space, addressInput.value.length);
-    console.log(first);
-    console.log(last);
-    adressArr.push(first);
-    adressArr.push(last);
-    console.log(adressArr);
-    validateChars(first, addressLabelError, addressErrorDivP, addressInputClassName, !both);
-    validateNumbers(last, addressLabelError, addressErrorDivP, addressInputClassName);
-    moreThan(first, addressLabelError, addressErrorDivP, 3);
-    moreThan(last, addressLabelError, addressErrorDivP, 1);
-    } else {
-        validateEmpty(addressInput, addressLabelError);
-        if (isEmpty === false) {
-            signUpValidationError("Must contain a street and a number", addressLabelError, addressInputClassName, addressErrorDivP);
+    moreThan(addressInput, addressLabelError, addressErrorDivP, 5, adressArr);
+    var cleanAdrres = addressInput.value.trim();
+    if (cleanAdrres.split("").filter(function(char){return char.indexOf(" ") != -1 ;}).length != 1) {
+        var child;
+        if (!child) {
+        child = document.createElement('label');
+        child.innerHTML = "Input must have a space";
+        child.classList.add(addressInputClassName);
+        child.classList.add("small");
+        child.classList.add('reveal');
+        addressErrorDivP.appendChild(child);
+        addressLabelError.classList.remove('hidden');
+        addressLabelError.classList.add('reveal');
+        adressArr.push("Input must be only letters");
+        errors.push(adressArr);
+        isAddress = false;
+        hasError = true;
         }
+    } else {
+        isAddress = true;
+    }
+    if (hasError) {
+        hasError = false;
+        return;
+    } else {
+        addressIsValid = true;
+        var success = "Adress: " + addressInput.value;
+        successArr.push(success);
     }
 };
 postalCodeInput.onblur = function() {
-    validateNumbers(postalCodeInput, postalCodeLabelError, postalCodeErrorDivP, postalCodeInputClassName);
-    validateEmpty(postalCodeInput, postalCodeLabelError);
-    moreThan(postalCodeInput, postalCodeLabelError, postalCodeErrorDivP, 4);
+    validateNumbers(postalCodeInput, postalCodeLabelError, postalCodeErrorDivP, postalCodeInputClassName, postalArr);
+    validateEmpty(postalCodeInput, postalCodeLabelError, postalArr);
+    moreThan(postalCodeInput, postalCodeLabelError, postalCodeErrorDivP, 4, postalArr);
+    if (hasError) {
+        hasError = false;
+        return;
+    } else {
+        postalCodeIsValid = true;
+        var success = "Postal code: " + postalCodeInput.value;
+        successArr.push(success);
+    }
 };
 passwordInput2.onblur = function() {
-    validateEmpty(passwordInput2, passwordLabelError);
-    moreThan(passwordInput2, passwordLabelError, passwordErrorDivP, 8);
+    validateEmpty(passwordInput2, passwordLabelError, paswordArr);
+    moreThan(passwordInput2, passwordLabelError, passwordErrorDivP, 8, paswordArr);
+    if (hasError) {
+        hasError = false;
+        return;
+    } else {
+        passwordIsValid = true;
+        var success = "Valid password";
+        successArr.push(success);
+    }
 };
 repeatPasswordInput.onblur = function() {
-    validateEmpty(repeatPasswordInput, repeatPasswordLabelError);
-    moreThan(repeatPasswordInput, repeatPasswordLabelError, repeatPasswordErrorDivP, 8);
+    validateEmpty(repeatPasswordInput, repeatPasswordLabelError, repeatArr);
+    moreThan(repeatPasswordInput, repeatPasswordLabelError, repeatPasswordErrorDivP, 8, repeatArr);
     if (repeatPasswordInput.value !== passwordInput2.value) {
         var child = document.createElement('label');
         child.innerHTML = "passwords dont match";
@@ -144,10 +247,26 @@ repeatPasswordInput.onblur = function() {
     } else {
         isEqual = true;
     }
+    if (hasError) {
+        hasError = false;
+        return;
+    } else {
+        repeatPasswordIsValid = true;
+        var success = "Paswords match";
+        successArr.push(success);
+    }
 };
 emailInput2.onblur = function() {
-    validateEmpty(emailInput2, emailLabelError);
+    validateEmpty(emailInput2, emailLabelError, emailArr);
     validateEmail(emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
+    if (hasError) {
+        hasError = false;
+        return;
+    } else {
+        emailIsValid = false;
+        var success = "Email: " + emailInput2.value;
+        successArr.push(success);
+    }
 };
 // FOCUS----------------------FOCUS-----------------------FOCUS
 nameInput.onfocus = function() {
@@ -184,10 +303,13 @@ emailInput2.onfocus = function() {
     thereAndBackAgain(emailLabelError, emailInputClassName);
 };
 
-function validateEmpty(contentInput, label) {
+function validateEmpty(contentInput, label, array) {
     if (contentInput.value.trim() === "") {
         label.classList.remove('hidden');
         label.classList.add('reveal');
+        hasError = true;
+        array.push("Input required");
+        errors.push(array);
         return isEmpty = false;
     } else {
         return isEmpty = true;
@@ -201,7 +323,8 @@ function thereAndBackAgain(label, className) {
         || isSmaller === false
         || isBoth === false
         || isEqual === false
-        || isEmail === false) {
+        || isEmail === false
+        || isAddress === false) {
         for (var i = 0; i < children.length; i++) {
             if (children[i].classList.contains(className)
             || children[i].classList.contains('size')
@@ -223,7 +346,7 @@ function thereAndBackAgain(label, className) {
         label.classList.add('hidden');
     }
 };
-function validateChars(input, label, parent, className, both) {
+function validateChars(input, label, parent, className, both, array) {
     var arr = [];
     isLetter = false;
     for (var i = 0; i < input.value.length; i++) {
@@ -242,7 +365,10 @@ function validateChars(input, label, parent, className, both) {
         parent.appendChild(child);
         label.classList.remove('hidden');
         label.classList.add('reveal');
+        array.push("Input must be only letters");
+        errors.push(array);
         isLetter = false;
+        hasError = true;
         }
       } else if (both === true) {
         if ((arr[j] < 65 || arr[j] > 90 && arr[j] < 97 || arr[j] > 122) && (arr[j] < 48 || arr[j] > 57)) {
@@ -256,7 +382,10 @@ function validateChars(input, label, parent, className, both) {
             parent.appendChild(child);
             label.classList.remove('hidden');
             label.classList.add('reveal');
+            array.push("Invalid character");
+            errors.push(array);
             isBoth = false;
+            hasError = true;
             }
         } else {
             isBoth = true;
@@ -266,7 +395,7 @@ function validateChars(input, label, parent, className, both) {
       }
     }
   };
-function validateNumbers(input, label, parent, className) {
+function validateNumbers(input, label, parent, className, array) {
     var arr = [];
     isNumber = false;
     for (var i = 0; i < input.value.length; i++) {
@@ -285,7 +414,10 @@ function validateNumbers(input, label, parent, className) {
         parent.appendChild(child);
         label.classList.remove('hidden');
         label.classList.add('reveal');
+        array.push("Input must be only numbers");
+        errors.push(array);
         isNumber = false;
+        hasError = true;
         }
       } else {
         isNumber = true;
@@ -293,7 +425,7 @@ function validateNumbers(input, label, parent, className) {
     }
   };
 
-function moreThan(input, label, parent, numb) {
+function moreThan(input, label, parent, numb, array) {
     if (input.value.length < numb) {
         var child;
         if (!child) {
@@ -305,13 +437,16 @@ function moreThan(input, label, parent, numb) {
         parent.appendChild(child);
         label.classList.remove('hidden');
         label.classList.add('reveal');
+        array.push("Wrong length");
+        errors.push(array);
         isbigger = false;
+        hasError = true;
         }
     } else {
         isbigger = true;
     }
 }
-function lessThan(input, label, parent, numb) {
+function lessThan(input, label, parent, numb, array) {
     if (input.value.length > numb) {
         var child;
         if (!child) {
@@ -323,7 +458,10 @@ function lessThan(input, label, parent, numb) {
         parent.appendChild(child);
         label.classList.remove('hidden');
         label.classList.add('reveal');
+        array.push("Wrong length");
+        errors.push(array);
         isSmaller = false;
+        hasError = true;
         }
     } else {
         isSmaller = true;
@@ -337,41 +475,69 @@ function validateEmail() {
     var symbolRegex = /[^a-zA-Z0-9.]/;
     var testRegex = /^[^@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
     isEmail = false;
+    hasError = true;
     if (middle.includes(".")) {
-      signUpValidationError("Invalid Email", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
+        signUpValidationError("Invalid Email", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
+        emailArr.push("Invalid Email");
+        errors.push(emailArr);
     } else if (emailInput2.value.trim() === "") {
-      signUpValidationError("Email required", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
+        signUpValidationError("Email required", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
+        emailArr.push("Email required");
+        errors.push(emailArr);
     } else if (testRegex.test(emailInput2.value)) {
        if (emailInput2.value.includes(" ")) {
         signUpValidationError("Extra space detected", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
+        emailArr.push("Extra space detected");
+        errors.push(emailArr);
       } else if (emailInput2.value.indexOf('@') < 2) {
         signUpValidationError("Email too short", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
+        emailArr.push("Email too short");
+        errors.push(emailArr);
       } else if (symbolRegex.test(emailInput2.value.slice(emailInput2.value.indexOf('@') +1 ,
         emailInput2.value.indexOf('.'))) ||
         (symbolRegex.test(emailInput2.value.slice(0, emailInput2.value.indexOf('@')))) ||
         (symbolRegex.test(emailInput2.value.slice(emailInput2.value.indexOf('.') +5)))) {
         signUpValidationError("Invalid character", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
+        emailArr.push("Invalid character");
+        errors.push(emailArr);
       } else if (!dot.test(emailInput2.value)) {
         signUpValidationError("Invalid Email", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
+        emailArr.push("Invalid Email");
+        errors.push(emailArr);
       } else if (emailErrorDivP.childElementCount > 1) {
-        console.log("hola")
         thereAndBackAgain(emailLabelError, emailInputClassName);
       } else if (emailInput2.value.length >= 30) {
         signUpValidationError("TLDR Lol", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
+        emailArr.push("TLDR Lol");
+        errors.push(emailArr);
       } else {
         isEmail = true;
+        hasError = false;
       }
     } else {
-      signUpValidationError("Invalid Email", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
+        signUpValidationError("Invalid Email", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
+        emailArr.push("Invalid Email");
+        errors.push(emailArr);
     }
   }
-    function signUpValidationError(text, label, className, parent) {
-      var child = document.createElement('label');
-      child.innerHTML = text;
-      child.classList.add(className);
-      child.classList.add("small");
-      child.classList.add('reveal');
-      parent.appendChild(child);
-      label.classList.remove('hidden');
-      label.classList.add('reveal');
+function signUpValidationError(text, label, className, parent) {
+    var child = document.createElement('label');
+    child.innerHTML = text;
+    child.classList.add(className);
+    child.classList.add("small");
+    child.classList.add('reveal');
+    parent.appendChild(child);
+    label.classList.remove('hidden');
+    label.classList.add('reveal');
+}
+var continueBtn = document.querySelector('#continue-btn')
+continueBtn.onclick = function() {
+    if (nameIsValid && lastNameIsValid && idIsValid && phoneNumberIsValid && birthDayIsValid && regionIsValid && addressIsValid && postalCodeIsValid && passwordIsValid && repeatPasswordIsValid) {
+        var nice = successArr.join('\n');
+        alert(nice);
+        window.location.href = "./log-in.html";
+    } else {
+        var notNice = errors.join('\n');
+        alert(notNice);
     }
+}

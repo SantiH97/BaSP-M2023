@@ -1,7 +1,7 @@
 section {
     padding: 10px;
     margin: 120px auto 0 auto;
-    width: 25%;
+    width: 80%;
     align-items: center;
     background-color: white;
 }
@@ -67,4 +67,14 @@ p {
     width: 20px;
     height: 20px;
     float: left;
+}
+@media only screen and (min-width: 600px) {
+    section {
+        width: 60%;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    section {
+        width: 40%;
+    }
 }

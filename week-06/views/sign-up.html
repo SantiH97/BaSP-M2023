@@ -21,140 +21,142 @@
     </header>
     <main>
         <section>
-            <a href="../views/log-in.html">
-                <button id="back-btn" >
-                    <img src="../../assets/images/close-back.png" alt="back">
-                </button>
-            </a>
-            <h2>Sign up</h2>
+            <div>
+                <a href="../views/log-in.html">
+                    <button id="back-btn" >
+                        <img src="../../assets/images/close-back.png" alt="back">
+                    </button>
+                </a>
+                <h2>Sign up</h2>
+            </div>
             <form>
                 <div class="container first">
                     <div>
-                        <label>
+                        <label for="name">
                             Name
                         </label>
                         <div id="name-error-div" class="error">
-                            <label id="name-error" class="hidden small">
+                            <label id="name-error" class="hidden small" for="name">
                                 Input required
                             </label>
                         </div>
                     </div>
-                    <input id="name" class="register-input" type="text">
+                    <input id="name" class="register-input" name="name" type="text">
                     <div>
-                        <label>
+                        <label for="last-name">
                             Last name
                         </label>
                         <div id="last-name-error-div" class="error">
-                            <label id="last-name-error" class="hidden small">
+                            <label id="last-name-error" class="hidden small" for="last-name">
                                 Input required
                             </label>
                         </div>
                     </div>
-                    <input id="last-name" class="register-input" type="text">
+                    <input id="last-name" class="register-input" name="last-name" type="text">
                     <div>
-                        <label>
+                        <label for="id">
                             Id
                         </label>
                         <div id="id-error-div" class="error">
-                            <label id="id-error" class="hidden small">
+                            <label id="id-error" class="hidden small" for="id">
                                 Input required
                             </label>
                         </div>
                     </div>
-                    <input id="id" class="register-input email-input" type="text">
+                    <input id="id" class="register-input email-input" name="id" type="text">
                     <div>
-                        <label>
+                        <label for="phone-number">
                             Phone Number
                         </label>
                         <div id="phone-number-error-div" class="error">
-                            <label id="phone-number-error" class="hidden small">
+                            <label id="phone-number-error" class="hidden small" for="phone-number">
                                 Input required
                             </label>
                         </div>
                     </div>
-                    <input id="phone-number" class="register-input" type="text">
+                    <input id="phone-number" class="register-input" type="text" name="phone-number">
                     <div>
-                        <label>
+                        <label for="birth-day">
                             Birth Day
                         </label>
                         <div id="birth-day-error-div" class="error">
-                            <label id="birth-day-error" class="hidden small">
+                            <label id="birth-day-error" class="hidden small" for="birth-day">
                                 Input required
                             </label>
                         </div>
                     </div>
-                    <input id="birth-day" class="register-input" type="date">
+                    <input id="birth-day" class="register-input" type="date" name="birth-day">
                     <div>
-                        <label>
+                        <label for="password">
                             Password
                         </label>
                         <div id="password-error-div" class="error">
-                            <label id="password-error" class="hidden small">
+                            <label id="password-error" class="hidden small" for="password">
                                 Input required
                             </label>
                         </div>
                     </div>
-                    <input id="password-input" class="register-input" type="password">
+                    <input id="password-input" class="register-input" type="password" name="password">
                 </div>
                 <div class="container">
                     <span id="image-placeholder">
                         <img src="../../assets/images/camera.png" alt="camera">
                     </span>
                     <div>
-                        <label>
+                        <label for="region">
                             Region
                         </label>
                         <div id="region-error-div" class="error">
-                            <label id="region-error" class="hidden small">
+                            <label id="region-error" class="hidden small" for="region">
                                 Input required
                             </label>
                         </div>
                     </div>
-                    <input id="region" class="register-input" type="text">
+                    <input id="region" class="register-input" type="text" name="region">
                     <div>
-                        <label>
+                        <label for="address">
                             Address
                         </label>
                         <div id="address-error-div" class="error">
-                            <label id="address-error" class="hidden small">
+                            <label id="address-error" class="hidden small" for="address">
                                 Input required
                             </label>
                         </div>
                     </div>
-                    <input id="address" class="register-input" type="text">
+                    <input id="address" class="register-input" type="text" name="address">
                     <div>
-                        <label>
+                        <label for="postal">
                             Postal Code
                         </label>
                         <div id="postal-code-error-div" class="error">
-                            <label id="postal-code-error" class="hidden small">
+                            <label id="postal-code-error" class="hidden small" for="postal">
                                 Input required
                             </label>
                         </div>
                     </div>
-                    <input id="postal-code" class="register-input" type="text">
+                    <input id="postal-code" class="register-input" type="text" name="postal">
                     <div>
-                        <label>
+                        <label for="email">
                             Email
                         </label>
                         <div id="email-error-div" class="error">
-                            <label id="email-error" class="hidden small">
+                            <label id="email-error" class="hidden small" for="email">
                                 Input required
                             </label>
                         </div>
                     </div>
-                    <input id="email-input" class="register-input" type="text">
+                    <input id="email-input" class="register-input" type="text" name="email">
                     <div>
-                        <label>
+                        <label for="repeat">
                             Repeat Password
                         </label>
                         <div id="repeat-password-error-div" class="error">
-                            <label id="repeat-password-error" class="hidden small">
+                            <label id="repeat-password-error" class="hidden small" for="repeat">
                                 Input required
                             </label>
                         </div>
                     </div>
-                    <input id="repeat-password-input" class="register-input" type="password">
+                    <input id="repeat-password-input" class="register-input" type="password" name="repeat">
                 </div>
             </form>
         </section>
