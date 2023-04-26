@@ -15,7 +15,7 @@ form {
 form div div {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 label {
     margin-left: 10%;
@@ -60,9 +60,11 @@ label {
     color: var(--error-red);
 }
 .error {
+    margin-right: 10%;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    flex-flow: column;
+    align-items: flex-end;
+    justify-content: center;
 }
 .small {
     margin: 0;

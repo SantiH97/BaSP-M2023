@@ -1,10 +1,10 @@
 // INPUTS----------------------INPUTS-----------------------INPUTS
 var nameInput = document.querySelector('#name');
-var LastNameInput = document.querySelector('#last-name');
+var lastNameInput = document.querySelector('#last-name');
 var idInput = document.querySelector('#id');
 var phoneNumberInput = document.querySelector('#phone-number');
 var birthDayInput = document.querySelector('#birth-day');
-var RegionInput = document.querySelector('#region');
+var regionInput = document.querySelector('#region');
 var addressInput = document.querySelector('#address');
 var postalCodeInput = document.querySelector('#postal-code');
 var passwordInput2 = document.querySelector('#password-input');
@@ -12,7 +12,7 @@ var repeatPasswordInput = document.querySelector('#repeat-password-input');
 var emailInput2 = document.querySelector('#email-input');
 // LABELS----------------------LABELS-----------------------LABELS
 var nameLabelError = document.querySelector('#name-error');
-var LastNameLabelError = document.querySelector('#last-name-error');
+var lastNameLabelError = document.querySelector('#last-name-error');
 var idLabelError = document.querySelector('#id-error');
 var phoneNumberLabelError = document.querySelector('#phone-number-error');
 var birthDayLabelError = document.querySelector('#birth-day-error');
@@ -23,27 +23,27 @@ var passwordLabelError = document.querySelector('#password-error');
 var repeatPasswordLabelError = document.querySelector('#repeat-password-error');
 var emailLabelError = document.querySelector('#email-error');
 // DIVS----------------------DIVS-----------------------DIVS
-var nameErrorDiv = document.querySelector('#name-error-div');
+var nameErrorDiv = document.querySelector('#name-error');
 var nameErrorDivP = nameErrorDiv.parentNode;
-var LastNameErrorDiv = document.querySelector('#last-name-error-div');
-var LastNameErrorDivP = LastNameErrorDiv.parentNode;
+var lastNameErrorDiv = document.querySelector('#last-name-error');
+var lastNameErrorDivP = lastNameErrorDiv.parentNode;
 var idErrorDiv = document.querySelector('#id-error');
 var idErrorDivP = idErrorDiv.parentNode;
-var phoneNumberErrorDiv = document.querySelector('#phone-number-error-div');
+var phoneNumberErrorDiv = document.querySelector('#phone-number-error');
 var phoneNumberErrorDivP = phoneNumberErrorDiv.parentNode;
-var birthDayErrorDiv = document.querySelector('#birth-day-error-div');
+var birthDayErrorDiv = document.querySelector('#birth-day-error');
 var birthDayErrorDivP = birthDayErrorDiv.parentNode;
-var regionErrorDiv = document.querySelector('#region-error-div');
+var regionErrorDiv = document.querySelector('#region-error');
 var regionErrorDivP = regionErrorDiv.parentNode;
-var addressErrorDiv = document.querySelector('#address-error-div');
+var addressErrorDiv = document.querySelector('#address-error');
 var addressErrorDivP = addressErrorDiv.parentNode;
-var postalCodeErrorDiv = document.querySelector('#postal-code-error-div');
+var postalCodeErrorDiv = document.querySelector('#postal-code-error');
 var postalCodeErrorDivP = postalCodeErrorDiv.parentNode;
-var passwordErrorDiv = document.querySelector('#password-error-div');
+var passwordErrorDiv = document.querySelector('#password-error');
 var passwordErrorDivP = passwordErrorDiv.parentNode;
-var repeatPasswordErrorDiv = document.querySelector('#repeat-password-error-div');
+var repeatPasswordErrorDiv = document.querySelector('#repeat-password-error');
 var repeatPasswordErrorDivP = repeatPasswordErrorDiv.parentNode;
-var emailErrorDiv = document.querySelector('#email-error-div');
+var emailErrorDiv = document.querySelector('#email-error');
 var emailErrorDivP = emailErrorDiv.parentNode;
 // FLAGS----------------------FLAGS-----------------------FLAGS
 var isLetter = true;
@@ -71,11 +71,11 @@ var repeatPasswordIsValid = false;
 var emailIsValid = false;
 // CLASSNAMES----------------------CLASSNAMES-----------------------CLASSNAMES
 var nameInputClassName = 'only-letters';
-var LastNameInputClassName = 'only-letters2';
+var lastNameInputClassName = 'only-letters2';
 var idInputClassName = 'only-numbers';
 var phoneNumberInputClassName = 'only-numbers2';
 var birthDayInputClassName = 'only-';
-var RegionInputClassName = 'both';
+var regionInputClassName = 'both';
 var addressInputClassName = 'both2';
 var postalCodeInputClassName = 'only-numbers3';
 var passwordInput2ClassName = 'only-passwords';
@@ -89,7 +89,7 @@ var lastNameArr = ["Last name: "];
 var idArr = ["Id: "];
 var phoneArr = ["Phone number: "];
 var birthArr = ["Birth day: "];
-var regionArr = ["Region: "];
+var regionArr = ["region: "];
 var adressArr = ["Adress: "];
 var postalArr = ["Postal code: "];
 var paswordArr = ["Password: "];
@@ -103,6 +103,7 @@ nameInput.onblur = function() {
     validateEmpty(nameInput, nameLabelError, nameArr);
     moreThan(nameInput, nameLabelError, nameErrorDivP, 3, nameArr);
     if (hasError) {
+        nameLabelError.classList.add("name2");
         hasError = false;
         return;
     } else {
@@ -111,16 +112,17 @@ nameInput.onblur = function() {
         successArr.push(success);
     }
 };
-LastNameInput.onblur = function() {
-    validateChars(LastNameInput, LastNameLabelError, LastNameErrorDivP, LastNameInputClassName, !both, lastNameArr);
-    validateEmpty(LastNameInput, LastNameLabelError, lastNameArr);
-    moreThan(LastNameInput, LastNameLabelError, LastNameErrorDivP, 3, lastNameArr);
+lastNameInput.onblur = function() {
+    validateChars(lastNameInput, lastNameLabelError, lastNameErrorDivP, lastNameInputClassName, !both, lastNameArr);
+    validateEmpty(lastNameInput, lastNameLabelError, lastNameArr);
+    moreThan(lastNameInput, lastNameLabelError, lastNameErrorDivP, 3, lastNameArr);
     if (hasError) {
+        lastNameLabelError.classList.add("last-name2");
         hasError = false;
         return;
     } else {
         lastNameIsValid = true;
-        var success = "Last name: " + LastNameInput.value;
+        var success = "Last name: " + lastNameInput.value;
         successArr.push(success);
     }
 };
@@ -129,6 +131,7 @@ idInput.onblur = function() {
     validateEmpty(idInput, idLabelError, idArr);
     moreThan(idInput, idLabelError, idErrorDivP, 7, idArr);
     if (hasError) {
+        idLabelError.classList.add("id2");
         hasError = false;
         return;
     } else {
@@ -143,6 +146,7 @@ phoneNumberInput.onblur = function() {
     moreThan(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDivP, 10, phoneArr);
     lessThan(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDivP, 10, phoneArr);
     if (hasError) {
+        phoneNumberLabelError.classList.add("phone2");
         hasError = false;
         return;
     } else {
@@ -154,6 +158,7 @@ phoneNumberInput.onblur = function() {
 birthDayInput.onblur = function() {
     validateEmpty(birthDayInput, birthDayLabelError, birthArr);
     if (hasError) {
+        birthDayLabelError.classList.add("birth-day2");
         hasError = false;
         return;
     } else {
@@ -162,16 +167,17 @@ birthDayInput.onblur = function() {
         successArr.push(success);
     }
 };
-RegionInput.onblur = function() {
-    validateEmpty(RegionInput, regionLabelError, regionArr);
-    moreThan(RegionInput, regionLabelError, regionErrorDivP, 3, regionArr);
-    validateChars(RegionInput, regionLabelError, regionErrorDivP, RegionInputClassName, both, regionArr);
+regionInput.onblur = function() {
+    validateEmpty(regionInput, regionLabelError, regionArr);
+    moreThan(regionInput, regionLabelError, regionErrorDivP, 3, regionArr);
+    validateChars(regionInput, regionLabelError, regionErrorDivP, regionInputClassName, both, regionArr);
     if (hasError) {
+        regionLabelError.classList.add("region2");
         hasError = false;
         return;
     } else {
         regionIsValid = true;
-        var success = "Region: " + RegionInput.value;
+        var success = "region: " + regionInput.value;
         successArr.push(success);
     }
 };
@@ -198,6 +204,7 @@ addressInput.onblur = function() {
         isAddress = true;
     }
     if (hasError) {
+        addressLabelError.classList.add("address2");
         hasError = false;
         return;
     } else {
@@ -211,6 +218,7 @@ postalCodeInput.onblur = function() {
     validateEmpty(postalCodeInput, postalCodeLabelError, postalArr);
     moreThan(postalCodeInput, postalCodeLabelError, postalCodeErrorDivP, 4, postalArr);
     if (hasError) {
+        postalCodeLabelError.classList.add("postal2");
         hasError = false;
         return;
     } else {
@@ -223,6 +231,7 @@ passwordInput2.onblur = function() {
     validateEmpty(passwordInput2, passwordLabelError, paswordArr);
     moreThan(passwordInput2, passwordLabelError, passwordErrorDivP, 8, paswordArr);
     if (hasError) {
+        passwordLabelError.classList.add("password2");
         hasError = false;
         return;
     } else {
@@ -248,6 +257,7 @@ repeatPasswordInput.onblur = function() {
         isEqual = true;
     }
     if (hasError) {
+        repeatPasswordLabelError.classList.add("repeat2");
         hasError = false;
         return;
     } else {
@@ -260,6 +270,7 @@ emailInput2.onblur = function() {
     validateEmpty(emailInput2, emailLabelError, emailArr);
     validateEmail(emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
     if (hasError) {
+        emailLabelError.classList.add("email2");
         hasError = false;
         return;
     } else {
@@ -272,8 +283,8 @@ emailInput2.onblur = function() {
 nameInput.onfocus = function() {
     thereAndBackAgain(nameLabelError, nameInputClassName);
 };
-LastNameInput.onfocus = function() {
-    thereAndBackAgain(LastNameLabelError, LastNameInputClassName);
+lastNameInput.onfocus = function() {
+    thereAndBackAgain(lastNameLabelError, lastNameInputClassName);
 };
 idInput.onfocus = function() {
     thereAndBackAgain(idLabelError, idInputClassName);
@@ -284,8 +295,8 @@ phoneNumberInput.onfocus = function() {
 birthDayInput.onfocus = function() {
     thereAndBackAgain(birthDayLabelError);
 };
-RegionInput.onfocus = function() {
-    thereAndBackAgain(regionLabelError, RegionInputClassName);
+regionInput.onfocus = function() {
+    thereAndBackAgain(regionLabelError, regionInputClassName);
 };
 addressInput.onfocus = function() {
     thereAndBackAgain(addressLabelError, addressInputClassName);
@@ -430,7 +441,7 @@ function moreThan(input, label, parent, numb, array) {
         var child;
         if (!child) {
         child = document.createElement('label');
-        child.innerHTML = "Input must be at least " + numb + " characters long";
+        child.innerHTML = "Wrong length";
         child.classList.add("size");
         child.classList.add("small");
         child.classList.add('reveal');
@@ -451,7 +462,7 @@ function lessThan(input, label, parent, numb, array) {
         var child;
         if (!child) {
         child = document.createElement('label');
-        child.innerHTML = "Input must be less than " + numb + " characters long";
+        child.innerHTML = "Wrong length";
         child.classList.add("size2");
         child.classList.add("small");
         child.classList.add('reveal');
