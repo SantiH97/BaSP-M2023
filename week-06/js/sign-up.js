@@ -103,7 +103,6 @@ nameInput.onblur = function() {
     validateEmpty(nameInput, nameLabelError, nameArr);
     moreThan(nameInput, nameLabelError, nameErrorDivP, 3, nameArr);
     if (hasError) {
-        nameLabelError.classList.add("name2");
         hasError = false;
         return;
     } else {
@@ -117,7 +116,6 @@ lastNameInput.onblur = function() {
     validateEmpty(lastNameInput, lastNameLabelError, lastNameArr);
     moreThan(lastNameInput, lastNameLabelError, lastNameErrorDivP, 3, lastNameArr);
     if (hasError) {
-        lastNameLabelError.classList.add("last-name2");
         hasError = false;
         return;
     } else {
@@ -131,7 +129,6 @@ idInput.onblur = function() {
     validateEmpty(idInput, idLabelError, idArr);
     moreThan(idInput, idLabelError, idErrorDivP, 7, idArr);
     if (hasError) {
-        idLabelError.classList.add("id2");
         hasError = false;
         return;
     } else {
@@ -146,7 +143,6 @@ phoneNumberInput.onblur = function() {
     moreThan(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDivP, 10, phoneArr);
     lessThan(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDivP, 10, phoneArr);
     if (hasError) {
-        phoneNumberLabelError.classList.add("phone2");
         hasError = false;
         return;
     } else {
@@ -158,7 +154,6 @@ phoneNumberInput.onblur = function() {
 birthDayInput.onblur = function() {
     validateEmpty(birthDayInput, birthDayLabelError, birthArr);
     if (hasError) {
-        birthDayLabelError.classList.add("birth-day2");
         hasError = false;
         return;
     } else {
@@ -172,7 +167,6 @@ regionInput.onblur = function() {
     moreThan(regionInput, regionLabelError, regionErrorDivP, 3, regionArr);
     validateChars(regionInput, regionLabelError, regionErrorDivP, regionInputClassName, both, regionArr);
     if (hasError) {
-        regionLabelError.classList.add("region2");
         hasError = false;
         return;
     } else {
@@ -204,7 +198,6 @@ addressInput.onblur = function() {
         isAddress = true;
     }
     if (hasError) {
-        addressLabelError.classList.add("address2");
         hasError = false;
         return;
     } else {
@@ -218,7 +211,6 @@ postalCodeInput.onblur = function() {
     validateEmpty(postalCodeInput, postalCodeLabelError, postalArr);
     moreThan(postalCodeInput, postalCodeLabelError, postalCodeErrorDivP, 4, postalArr);
     if (hasError) {
-        postalCodeLabelError.classList.add("postal2");
         hasError = false;
         return;
     } else {
@@ -231,7 +223,6 @@ passwordInput2.onblur = function() {
     validateEmpty(passwordInput2, passwordLabelError, paswordArr);
     moreThan(passwordInput2, passwordLabelError, passwordErrorDivP, 8, paswordArr);
     if (hasError) {
-        passwordLabelError.classList.add("password2");
         hasError = false;
         return;
     } else {
@@ -257,7 +248,6 @@ repeatPasswordInput.onblur = function() {
         isEqual = true;
     }
     if (hasError) {
-        repeatPasswordLabelError.classList.add("repeat2");
         hasError = false;
         return;
     } else {
@@ -270,7 +260,6 @@ emailInput2.onblur = function() {
     validateEmpty(emailInput2, emailLabelError, emailArr);
     validateEmail(emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
     if (hasError) {
-        emailLabelError.classList.add("email2");
         hasError = false;
         return;
     } else {
@@ -281,37 +270,37 @@ emailInput2.onblur = function() {
 };
 // FOCUS----------------------FOCUS-----------------------FOCUS
 nameInput.onfocus = function() {
-    thereAndBackAgain(nameLabelError, nameInputClassName);
+    thereAndBackAgain(nameLabelError, nameInputClassName, nameArr);
 };
 lastNameInput.onfocus = function() {
-    thereAndBackAgain(lastNameLabelError, lastNameInputClassName);
+    thereAndBackAgain(lastNameLabelError, lastNameInputClassName, lastNameArr);
 };
 idInput.onfocus = function() {
-    thereAndBackAgain(idLabelError, idInputClassName);
+    thereAndBackAgain(idLabelError, idInputClassName, idArr);
 };
 phoneNumberInput.onfocus = function() {
-    thereAndBackAgain(phoneNumberLabelError, phoneNumberInputClassName);
+    thereAndBackAgain(phoneNumberLabelError, phoneNumberInputClassName, phoneArr);
 };
 birthDayInput.onfocus = function() {
-    thereAndBackAgain(birthDayLabelError);
+    thereAndBackAgain(birthDayLabelError, birthArr);
 };
 regionInput.onfocus = function() {
-    thereAndBackAgain(regionLabelError, regionInputClassName);
+    thereAndBackAgain(regionLabelError, regionInputClassName, regionArr);
 };
 addressInput.onfocus = function() {
-    thereAndBackAgain(addressLabelError, addressInputClassName);
+    thereAndBackAgain(addressLabelError, addressInputClassName, adressArr);
 };
 postalCodeInput.onfocus = function() {
-    thereAndBackAgain(postalCodeLabelError, postalCodeInputClassName);
+    thereAndBackAgain(postalCodeLabelError, postalCodeInputClassName, postalArr);
 };
 passwordInput2.onfocus = function() {
-    thereAndBackAgain(passwordLabelError, passwordInput2ClassName);
+    thereAndBackAgain(passwordLabelError, passwordInput2ClassName, paswordArr);
 };
 repeatPasswordInput.onfocus = function() {
-    thereAndBackAgain(repeatPasswordLabelError, repeatPasswordInputClassName);
+    thereAndBackAgain(repeatPasswordLabelError, repeatPasswordInputClassName, repeatArr);
 };
 emailInput2.onfocus = function() {
-    thereAndBackAgain(emailLabelError, emailInputClassName);
+    thereAndBackAgain(emailLabelError, emailInputClassName, emailArr);
 };
 
 function validateEmpty(contentInput, label, array) {
@@ -326,7 +315,7 @@ function validateEmpty(contentInput, label, array) {
         return isEmpty = true;
     }
 };
-function thereAndBackAgain(label, className) {
+function thereAndBackAgain(label, className, array) {
     var children = document.querySelectorAll('.reveal');
     if (isLetter === false
         || isNumber === false
@@ -342,6 +331,7 @@ function thereAndBackAgain(label, className) {
             || children[i].classList.contains('size2')) {
               children[i].classList.remove('reveal');
               children[i].classList.add('hidden');
+              errors.pop(array);
             }
             isLetter = true;
             isNumber = true;
