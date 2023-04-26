@@ -83,25 +83,12 @@ var repeatPasswordInputClassName = 'not-equal';
 var emailInputClassName = 'only-emails';
 // ARRS----------------------ARRS-----------------------ARRS
 var errors = [];
-
-var nameArr = ["Name: "];
-var lastNameArr = ["Last name: "];
-var idArr = ["Id: "];
-var phoneArr = ["Phone number: "];
-var birthArr = ["Birth day: "];
-var regionArr = ["region: "];
-var adressArr = ["Adress: "];
-var postalArr = ["Postal code: "];
-var paswordArr = ["Password: "];
-var repeatArr = ["Repeat password: "];
-var emailArr = ["Email: "];
-
 var successArr = [];
 // BLUR----------------------BLUR-----------------------BLUR
 nameInput.onblur = function() {
-    validateChars(nameInput, nameLabelError, nameErrorDivP, nameInputClassName, !both, nameArr);
-    validateEmpty(nameInput, nameLabelError, nameArr);
-    moreThan(nameInput, nameLabelError, nameErrorDivP, 3, nameArr);
+    validateChars(nameInput, nameLabelError, nameErrorDivP, nameInputClassName, !both);
+    validateEmpty(nameInput, nameLabelError);
+    moreThan(nameInput, nameLabelError, nameErrorDivP, 3);
     if (hasError) {
         nameLabelError.classList.add("name2");
         hasError = false;
@@ -113,9 +100,9 @@ nameInput.onblur = function() {
     }
 };
 lastNameInput.onblur = function() {
-    validateChars(lastNameInput, lastNameLabelError, lastNameErrorDivP, lastNameInputClassName, !both, lastNameArr);
-    validateEmpty(lastNameInput, lastNameLabelError, lastNameArr);
-    moreThan(lastNameInput, lastNameLabelError, lastNameErrorDivP, 3, lastNameArr);
+    validateChars(lastNameInput, lastNameLabelError, lastNameErrorDivP, lastNameInputClassName, !both);
+    validateEmpty(lastNameInput, lastNameLabelError);
+    moreThan(lastNameInput, lastNameLabelError, lastNameErrorDivP, 3);
     if (hasError) {
         lastNameLabelError.classList.add("last-name2");
         hasError = false;
@@ -127,9 +114,9 @@ lastNameInput.onblur = function() {
     }
 };
 idInput.onblur = function() {
-    validateNumbers(idInput, idLabelError, idErrorDivP, idInputClassName, idArr);
-    validateEmpty(idInput, idLabelError, idArr);
-    moreThan(idInput, idLabelError, idErrorDivP, 7, idArr);
+    validateNumbers(idInput, idLabelError, idErrorDivP, idInputClassName);
+    validateEmpty(idInput, idLabelError);
+    moreThan(idInput, idLabelError, idErrorDivP, 7);
     if (hasError) {
         idLabelError.classList.add("id2");
         hasError = false;
@@ -141,10 +128,10 @@ idInput.onblur = function() {
     }
 };
 phoneNumberInput.onblur = function() {
-    validateNumbers(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDivP, phoneNumberInputClassName, phoneArr);
-    validateEmpty(phoneNumberInput, phoneNumberLabelError, phoneArr);
-    moreThan(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDivP, 10, phoneArr);
-    lessThan(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDivP, 10, phoneArr);
+    validateNumbers(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDivP, phoneNumberInputClassName);
+    validateEmpty(phoneNumberInput, phoneNumberLabelError);
+    moreThan(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDivP, 10);
+    lessThan(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDivP, 10);
     if (hasError) {
         phoneNumberLabelError.classList.add("phone2");
         hasError = false;
@@ -156,7 +143,7 @@ phoneNumberInput.onblur = function() {
     }
 };
 birthDayInput.onblur = function() {
-    validateEmpty(birthDayInput, birthDayLabelError, birthArr);
+    validateEmpty(birthDayInput, birthDayLabelError);
     if (hasError) {
         birthDayLabelError.classList.add("birth-day2");
         hasError = false;
@@ -168,9 +155,9 @@ birthDayInput.onblur = function() {
     }
 };
 regionInput.onblur = function() {
-    validateEmpty(regionInput, regionLabelError, regionArr);
-    moreThan(regionInput, regionLabelError, regionErrorDivP, 3, regionArr);
-    validateChars(regionInput, regionLabelError, regionErrorDivP, regionInputClassName, both, regionArr);
+    validateEmpty(regionInput, regionLabelError);
+    moreThan(regionInput, regionLabelError, regionErrorDivP, 3);
+    validateChars(regionInput, regionLabelError, regionErrorDivP, regionInputClassName, both);
     if (hasError) {
         regionLabelError.classList.add("region2");
         hasError = false;
@@ -182,7 +169,7 @@ regionInput.onblur = function() {
     }
 };
 addressInput.onblur = function() {
-    moreThan(addressInput, addressLabelError, addressErrorDivP, 5, adressArr);
+    moreThan(addressInput, addressLabelError, addressErrorDivP, 5);
     var cleanAdrres = addressInput.value.trim();
     if (cleanAdrres.split("").filter(function(char){return char.indexOf(" ") != -1 ;}).length != 1) {
         var child;
@@ -195,8 +182,6 @@ addressInput.onblur = function() {
         addressErrorDivP.appendChild(child);
         addressLabelError.classList.remove('hidden');
         addressLabelError.classList.add('reveal');
-        adressArr.push("Input must be only letters");
-        errors.push(adressArr);
         isAddress = false;
         hasError = true;
         }
@@ -214,9 +199,9 @@ addressInput.onblur = function() {
     }
 };
 postalCodeInput.onblur = function() {
-    validateNumbers(postalCodeInput, postalCodeLabelError, postalCodeErrorDivP, postalCodeInputClassName, postalArr);
-    validateEmpty(postalCodeInput, postalCodeLabelError, postalArr);
-    moreThan(postalCodeInput, postalCodeLabelError, postalCodeErrorDivP, 4, postalArr);
+    validateNumbers(postalCodeInput, postalCodeLabelError, postalCodeErrorDivP, postalCodeInputClassName);
+    validateEmpty(postalCodeInput, postalCodeLabelError);
+    moreThan(postalCodeInput, postalCodeLabelError, postalCodeErrorDivP, 4);
     if (hasError) {
         postalCodeLabelError.classList.add("postal2");
         hasError = false;
@@ -228,8 +213,8 @@ postalCodeInput.onblur = function() {
     }
 };
 passwordInput2.onblur = function() {
-    validateEmpty(passwordInput2, passwordLabelError, paswordArr);
-    moreThan(passwordInput2, passwordLabelError, passwordErrorDivP, 8, paswordArr);
+    validateEmpty(passwordInput2, passwordLabelError);
+    moreThan(passwordInput2, passwordLabelError, passwordErrorDivP, 8);
     if (hasError) {
         passwordLabelError.classList.add("password2");
         hasError = false;
@@ -241,8 +226,8 @@ passwordInput2.onblur = function() {
     }
 };
 repeatPasswordInput.onblur = function() {
-    validateEmpty(repeatPasswordInput, repeatPasswordLabelError, repeatArr);
-    moreThan(repeatPasswordInput, repeatPasswordLabelError, repeatPasswordErrorDivP, 8, repeatArr);
+    validateEmpty(repeatPasswordInput, repeatPasswordLabelError);
+    moreThan(repeatPasswordInput, repeatPasswordLabelError, repeatPasswordErrorDivP, 8);
     if (repeatPasswordInput.value !== passwordInput2.value) {
         var child = document.createElement('label');
         child.innerHTML = "passwords dont match";
@@ -267,7 +252,7 @@ repeatPasswordInput.onblur = function() {
     }
 };
 emailInput2.onblur = function() {
-    validateEmpty(emailInput2, emailLabelError, emailArr);
+    validateEmpty(emailInput2, emailLabelError);
     validateEmail(emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
     if (hasError) {
         emailLabelError.classList.add("email2");
@@ -314,13 +299,11 @@ emailInput2.onfocus = function() {
     thereAndBackAgain(emailLabelError, emailInputClassName);
 };
 
-function validateEmpty(contentInput, label, array) {
+function validateEmpty(contentInput, label) {
     if (contentInput.value.trim() === "") {
         label.classList.remove('hidden');
         label.classList.add('reveal');
         hasError = true;
-        array.push("Input required");
-        errors.push(array);
         return isEmpty = false;
     } else {
         return isEmpty = true;
@@ -357,7 +340,7 @@ function thereAndBackAgain(label, className) {
         label.classList.add('hidden');
     }
 };
-function validateChars(input, label, parent, className, both, array) {
+function validateChars(input, label, parent, className, both) {
     var arr = [];
     isLetter = false;
     for (var i = 0; i < input.value.length; i++) {
@@ -376,8 +359,6 @@ function validateChars(input, label, parent, className, both, array) {
         parent.appendChild(child);
         label.classList.remove('hidden');
         label.classList.add('reveal');
-        array.push("Input must be only letters");
-        errors.push(array);
         isLetter = false;
         hasError = true;
         }
@@ -393,8 +374,6 @@ function validateChars(input, label, parent, className, both, array) {
             parent.appendChild(child);
             label.classList.remove('hidden');
             label.classList.add('reveal');
-            array.push("Invalid character");
-            errors.push(array);
             isBoth = false;
             hasError = true;
             }
@@ -406,7 +385,7 @@ function validateChars(input, label, parent, className, both, array) {
       }
     }
   };
-function validateNumbers(input, label, parent, className, array) {
+function validateNumbers(input, label, parent, className) {
     var arr = [];
     isNumber = false;
     for (var i = 0; i < input.value.length; i++) {
@@ -425,8 +404,6 @@ function validateNumbers(input, label, parent, className, array) {
         parent.appendChild(child);
         label.classList.remove('hidden');
         label.classList.add('reveal');
-        array.push("Input must be only numbers");
-        errors.push(array);
         isNumber = false;
         hasError = true;
         }
@@ -436,7 +413,7 @@ function validateNumbers(input, label, parent, className, array) {
     }
   };
 
-function moreThan(input, label, parent, numb, array) {
+function moreThan(input, label, parent, numb) {
     if (input.value.length < numb) {
         var child;
         if (!child) {
@@ -448,8 +425,6 @@ function moreThan(input, label, parent, numb, array) {
         parent.appendChild(child);
         label.classList.remove('hidden');
         label.classList.add('reveal');
-        array.push("Wrong length");
-        errors.push(array);
         isbigger = false;
         hasError = true;
         }
@@ -457,7 +432,7 @@ function moreThan(input, label, parent, numb, array) {
         isbigger = true;
     }
 }
-function lessThan(input, label, parent, numb, array) {
+function lessThan(input, label, parent, numb) {
     if (input.value.length > numb) {
         var child;
         if (!child) {
@@ -469,8 +444,6 @@ function lessThan(input, label, parent, numb, array) {
         parent.appendChild(child);
         label.classList.remove('hidden');
         label.classList.add('reveal');
-        array.push("Wrong length");
-        errors.push(array);
         isSmaller = false;
         hasError = true;
         }
@@ -489,46 +462,30 @@ function validateEmail() {
     hasError = true;
     if (middle.includes(".")) {
         signUpValidationError("Invalid Email", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
-        emailArr.push("Invalid Email");
-        errors.push(emailArr);
     } else if (emailInput2.value.trim() === "") {
         signUpValidationError("Email required", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
-        emailArr.push("Email required");
-        errors.push(emailArr);
     } else if (testRegex.test(emailInput2.value)) {
        if (emailInput2.value.includes(" ")) {
         signUpValidationError("Extra space detected", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
-        emailArr.push("Extra space detected");
-        errors.push(emailArr);
       } else if (emailInput2.value.indexOf('@') < 2) {
         signUpValidationError("Email too short", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
-        emailArr.push("Email too short");
-        errors.push(emailArr);
       } else if (symbolRegex.test(emailInput2.value.slice(emailInput2.value.indexOf('@') +1 ,
         emailInput2.value.indexOf('.'))) ||
         (symbolRegex.test(emailInput2.value.slice(0, emailInput2.value.indexOf('@')))) ||
         (symbolRegex.test(emailInput2.value.slice(emailInput2.value.indexOf('.') +5)))) {
         signUpValidationError("Invalid character", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
-        emailArr.push("Invalid character");
-        errors.push(emailArr);
       } else if (!dot.test(emailInput2.value)) {
         signUpValidationError("Invalid Email", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
-        emailArr.push("Invalid Email");
-        errors.push(emailArr);
       } else if (emailErrorDivP.childElementCount > 1) {
         thereAndBackAgain(emailLabelError, emailInputClassName);
       } else if (emailInput2.value.length >= 30) {
         signUpValidationError("TLDR Lol", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
-        emailArr.push("TLDR Lol");
-        errors.push(emailArr);
       } else {
         isEmail = true;
         hasError = false;
       }
     } else {
         signUpValidationError("Invalid Email", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
-        emailArr.push("Invalid Email");
-        errors.push(emailArr);
     }
   }
 function signUpValidationError(text, label, className, parent) {
@@ -543,12 +500,69 @@ function signUpValidationError(text, label, className, parent) {
 }
 var continueBtn = document.querySelector('#continue-btn')
 continueBtn.onclick = function() {
-    if (nameIsValid && lastNameIsValid && idIsValid && phoneNumberIsValid && birthDayIsValid && regionIsValid && addressIsValid && postalCodeIsValid && passwordIsValid && repeatPasswordIsValid) {
-        var nice = successArr.join('\n');
-        alert(nice);
-        window.location.href = "./log-in.html";
-    } else {
-        var notNice = errors.join('\n');
-        alert(notNice);
-    }
+  var errors = [];
+  if (nameIsValid && lastNameIsValid && idIsValid && phoneNumberIsValid && birthDayIsValid && regionIsValid && addressIsValid && postalCodeIsValid && passwordIsValid && repeatPasswordIsValid) {
+    var nice = successArr.join('\n');
+    alert(nice);
+    window.location.href = "./log-in.html";
+  } else {
+    var nameArr = document.querySelectorAll('.reveal.name2');
+    nameArr = Array.from(nameArr);
+    nameArr.forEach(function(element) {
+      errors.push("Name: " + element.textContent);
+    });
+    var lastNameArr = document.querySelectorAll('.reveal.last-name2');
+    lastNameArr = Array.from(lastNameArr);
+    lastNameArr.forEach(function(element) {
+      errors.push("Last Name: " + element.textContent);
+    });
+    var idArr = document.querySelectorAll('.reveal.id2');
+    idArr = Array.from(idArr);
+    idArr.forEach(function(element) {
+      errors.push("Id: " + element.textContent);
+    });
+    var phoneArr = document.querySelectorAll('.reveal.phone2');
+    phoneArr = Array.from(phoneArr);
+    phoneArr.forEach(function(element) {
+      errors.push("Phone Number: " + element.textContent);
+    });
+    var birthArr = document.querySelectorAll('.reveal.birth-day2');
+    birthArr = Array.from(birthArr);
+    birthArr.forEach(function(element) {
+      errors.push("Birth Day: " + element.textContent);
+    });
+    var regionArr = document.querySelectorAll('.reveal.region2');
+    regionArr = Array.from(regionArr);
+    regionArr.forEach(function(element) {
+      errors.push("Region: " + element.textContent);
+    });
+    var adressArr = document.querySelectorAll('.reveal.address2');
+    adressArr = Array.from(adressArr);
+    adressArr.forEach(function(element) {
+      errors.push("Address: " + element.textContent);
+    });
+    var postalArr = document.querySelectorAll('.reveal.postal2');
+    postalArr = Array.from(postalArr);
+    postalArr.forEach(function(element) {
+      errors.push("Postal Code: " + element.textContent);
+    });
+    var paswordArr = document.querySelectorAll('.reveal.password2');
+    paswordArr = Array.from(paswordArr);
+    paswordArr.forEach(function(element) {
+      errors.push("Password: " + element.textContent);
+    });
+    var repeatArr = document.querySelectorAll('.reveal.repeat2');
+    repeatArr = Array.from(repeatArr);
+    repeatArr.forEach(function(element) {
+      errors.push("Repeat Password: " + element.textContent);
+    });
+    var emailArr = document.querySelectorAll('.reveal.email2');
+    emailArr = Array.from(emailArr);
+    emailArr.forEach(function(element) {
+      errors.push("Email: " + element.textContent);
+    });
+    var notNice = errors.join('\n');
+    alert(notNice);
+  }
 }
+
