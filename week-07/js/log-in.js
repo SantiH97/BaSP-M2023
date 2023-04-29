@@ -107,7 +107,6 @@ function validateEmail() {
   var middleEnd = emailInput.value.lastIndexOf('.');
   var middle = emailInput.value.substring(middleBeginning, middleEnd);
   var dot = /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+$/;
-  var symbolRegex = /[^a-zA-Z0-9.]/;
   var testRegex = /^[^@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
   if (middle.includes(".")) {
     logInValidationError("Invalid Email");
@@ -118,11 +117,6 @@ function validateEmail() {
       logInValidationError("Extra space detected");
     } else if (emailInput.value.indexOf('@') < 2) {
       logInValidationError("Email too short");
-    } else if (symbolRegex.test(emailInput.value.slice(emailInput.value.indexOf('@') +1 ,
-      emailInput.value.indexOf('.'))) ||
-      (symbolRegex.test(emailInput.value.slice(0, emailInput.value.indexOf('@')))) ||
-      (symbolRegex.test(emailInput.value.slice(emailInput.value.indexOf('.') +5)))) {
-      logInValidationError("Invalid character");
     } else if (!dot.test(emailInput.value)) {
       logInValidationError("Invalid Email");
     } else if (emailPassed === true){
@@ -130,7 +124,7 @@ function validateEmail() {
         if (!beginningEmailFlag) {
           daddy.removeChild(errorBtn);
         }
-    } else if (emailInput.value.length >= 30) {
+    } else if (emailInput.value.length >= 40) {
       logInValidationError("TLDR Lol");
     } else {
       logInValidationSuccess();
