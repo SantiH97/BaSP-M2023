@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/small-reset.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/registration-common.css">
+    <link rel="stylesheet" href="../css/sign-up.css">
+    <script defer src="../js/sign-up.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="blue-section">
+        <h1>
+            <img src="../../assets/images/megarocket-logo.png" alt="MegaRocket">
+        </h1>
+    </header>
+    <main>
+        <section>
+            <div>
+                <a href="../views/log-in.html">
+                    <button id="back-btn" >
+                        <img src="../../assets/images/close-back.png" alt="back">
+                    </button>
+                </a>
+                <h2>Sign up</h2>
+            </div>
+            <form>
+                <div class="container first">
+                    <div>
+                        <label for="first-name">
+                            Name
+                        </label>
+                        <div id="name-error-div" class="error">
+                            <label id="name-error" class="hidden small" for="first-name">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="name" class="register-input" name="first-name" type="text" placeholder="Name">
+                    <div>
+                        <label for="last-name">
+                            Last name
+                        </label>
+                        <div id="last-name-error-div" class="error">
+                            <label id="last-name-error" class="hidden small" for="last-name">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="last-name" class="register-input" name="last-name" type="text" placeholder="Last Name">
+                    <div>
+                        <label for="id">
+                            Id
+                        </label>
+                        <div id="id-error-div" class="error">
+                            <label id="id-error" class="hidden small" for="id">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="id" class="register-input" name="id" type="text" placeholder="Id">
+                    <div>
+                        <label for="phone-number">
+                            Phone Number
+                        </label>
+                        <div id="phone-number-error-div" class="error">
+                            <label id="phone-number-error" class="hidden small" for="phone-number">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="phone-number" class="register-input"
+                    type="text" name="phone-number" placeholder="Phone Number">
+                    <div>
+                        <label for="birth-day">
+                            Birth Day
+                        </label>
+                        <div id="birth-day-error-div" class="error">
+                            <label id="birth-day-error" class="hidden small" for="birth-day">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="birth-day" class="register-input" type="date" name="birth-day" placeholder="birth day">
+                    <div>
+                        <label for="password">
+                            Password
+                        </label>
+                        <div id="password-error-div" class="error">
+                            <label id="password-error" class="hidden small" for="password">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="password-input" class="register-input"
+                    type="password" name="password" placeholder="Password">
+                </div>
+                <div class="container">
+                    <span id="image-placeholder">
+                        <img src="../../assets/images/camera.png" alt="camera">
+                    </span>
+                    <div>
+                        <label for="region">
+                            City
+                        </label>
+                        <div id="region-error-div" class="error">
+                            <label id="region-error" class="hidden small" for="region">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="region" class="register-input" type="text" name="region" placeholder="City">
+                    <div>
+                        <label for="address">
+                            Address
+                        </label>
+                        <div id="address-error-div" class="error">
+                            <label id="address-error" class="hidden small" for="address" >
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="address" class="register-input" type="text" name="address" placeholder="Address">
+                    <div>
+                        <label for="postal">
+                            Zip
+                        </label>
+                        <div id="postal-code-error-div" class="error">
+                            <label id="postal-code-error" class="hidden small" for="postal">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="postal-code" class="register-input" type="text" name="postal" placeholder="Zip">
+                    <div>
+                        <label for="email">
+                            Email
+                        </label>
+                        <div id="email-error-div" class="error">
+                            <label id="email-error" class="hidden small" for="email">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="email-input" class="register-input"
+                    type="text" name="email" placeholder="email@address.com">
+                    <div>
+                        <label for="repeat">
+                            Repeat Password
+                        </label>
+                        <div id="repeat-password-error-div" class="error">
+                            <label id="repeat-password-error" class="hidden small" for="repeat">
+                                Input required
+                            </label>
+                        </div>
+                    </div>
+                    <input id="repeat-password-input" class="register-input"
+                    type="password" name="repeat" placeholder="Repeat Password">
+                </div>
+            </form>
+        </section>
+        <button id="continue-btn" type="submit">
+            continue
+        </button>
+    </main>
+</body>
+</html>

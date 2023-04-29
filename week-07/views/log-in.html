@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/small-reset.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/registration-common.css">
+    <link rel="stylesheet" href="../css/log-in.css">
+    <script defer src="../js/log-in.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="blue-section">
+        <h1>
+            <img src="../../assets/images/megarocket-logo.png" alt="MegaRocket">
+        </h1>
+    </header>
+    <main>
+        <section>
+            <a href="../views/index.html">
+                <button id="back-btn" >
+                    <img src="../../assets/images/close-back.png" alt="back">
+                </button>
+            </a>
+            <h2>Log in</h2>
+            <form>
+                <div class="input-div">
+                    <img src="../../assets/images/email-envelope.png" alt="Email envelope">
+                    <input class="login-input email-input" type="text" placeholder="email@address.com">
+                </div>
+                <div class="input-div">
+                    <img src="../../assets/images/password-lock.png" alt="Password lock">
+                    <input class="login-input password-input" type="password" placeholder="Password">
+                </div>
+                <p>
+                    Have you forgotten the password?
+                </p>
+                <div>
+                    <input id="checkbox" type="checkbox">
+                    <label for="checkbox">Remember me</label>
+                </div>
+                <p>
+                    Don't have an account?
+                </p>
+                <a href="../views/sign-up.html">
+                    <p>
+                        Click here to become a member.
+                    </p>
+                </a>
+                <button id="continue-btn" type="submit">
+                    Log in
+                </button>
+            </form>
+        </section>
+        <div id="error-div">
+        </div>
+        <div id="password-error-div">
+        </div>
+    </main>
+</body>
+</html>

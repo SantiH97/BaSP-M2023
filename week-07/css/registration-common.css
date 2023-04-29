@@ -1,0 +1,34 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--gray);
+}
+h2 {
+    font-size: 36px;
+    text-align: center;
+    color: var(--register-green);
+}
+img#back-btn {
+    margin: 65px 6px 3px 6px;
+}
+#back-btn {
+    padding: 10px 10px 0px 10px;
+    margin: 0;
+    float: left;
+    position: relative;
+    right: 7%;
+    border: none ;
+    border-radius: 9999999px;
+    box-shadow: 4px 4px 14px -9px;
+    background-color: white;
+}
+#continue-btn {
+    margin: 19px 40%;
+    width: 20%;
+    height: 50px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background-color: var(--green);
+}

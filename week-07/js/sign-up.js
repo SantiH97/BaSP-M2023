@@ -158,8 +158,13 @@ birthDayInput.onblur = function() {
         return;
     } else {
         birthDayIsValid = true;
-        var success = "Birth day: " + birthDayInput.value;
+        var birthD = birthDayInput.value.split('-');
+        var oGFormattedDate = birthD[2] + '/' + birthD[1] + '/' + birthD[0];
+        var dob = birthDayInput.value.split('-');
+        var formattedDate = dob[1] + '/' + dob[2] + '/' + dob[0];
+        var success = "Birth day: " + oGFormattedDate;
         successArr.push(success);
+        return formattedDate;
     }
 };
 regionInput.onblur = function() {
@@ -190,7 +195,6 @@ addressInput.onblur = function() {
         addressLabelError.classList.remove('hidden');
         addressLabelError.classList.add('reveal');
         adressArr.push("Input must be only letters");
-        errors.push(adressArr);
         isAddress = false;
         hasError = true;
         }
@@ -309,7 +313,6 @@ function validateEmpty(contentInput, label, array) {
         label.classList.add('reveal');
         hasError = true;
         array.push("Input required");
-        errors.push(array);
         return isEmpty = false;
     } else {
         return isEmpty = true;
@@ -331,7 +334,8 @@ function thereAndBackAgain(label, className, array) {
             || children[i].classList.contains('size2')) {
               children[i].classList.remove('reveal');
               children[i].classList.add('hidden');
-              errors.pop(array);
+              array.pop();
+              array.pop("Input required");
             }
             isLetter = true;
             isNumber = true;
@@ -367,7 +371,6 @@ function validateChars(input, label, parent, className, both, array) {
         label.classList.remove('hidden');
         label.classList.add('reveal');
         array.push("Input must be only letters");
-        errors.push(array);
         isLetter = false;
         hasError = true;
         }
@@ -384,7 +387,6 @@ function validateChars(input, label, parent, className, both, array) {
             label.classList.remove('hidden');
             label.classList.add('reveal');
             array.push("Invalid character");
-            errors.push(array);
             isBoth = false;
             hasError = true;
             }
@@ -417,7 +419,6 @@ function validateNumbers(input, label, parent, className, array) {
         label.classList.remove('hidden');
         label.classList.add('reveal');
         array.push("Input must be only numbers");
-        errors.push(array);
         isNumber = false;
         hasError = true;
         }
@@ -441,7 +442,6 @@ function moreThan(input, label, parent, numb, array) {
         label.classList.remove('hidden');
         label.classList.add('reveal');
         array.push("Wrong length");
-        errors.push(array);
         isbigger = false;
         hasError = true;
         }
@@ -463,7 +463,6 @@ function lessThan(input, label, parent, numb, array) {
         label.classList.remove('hidden');
         label.classList.add('reveal');
         array.push("Wrong length");
-        errors.push(array);
         isSmaller = false;
         hasError = true;
         }
@@ -484,37 +483,30 @@ function validateEmail() {
     if (middle.includes(".")) {
         signUpValidationError("Invalid Email", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
         emailArr.push("Invalid Email");
-        errors.push(emailArr);
     } else if (emailInput2.value.trim() === "") {
         signUpValidationError("Email required", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
         emailArr.push("Email required");
-        errors.push(emailArr);
     } else if (testRegex.test(emailInput2.value)) {
        if (emailInput2.value.includes(" ")) {
         signUpValidationError("Extra space detected", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
         emailArr.push("Extra space detected");
-        errors.push(emailArr);
       } else if (emailInput2.value.indexOf('@') < 2) {
         signUpValidationError("Email too short", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
         emailArr.push("Email too short");
-        errors.push(emailArr);
       } else if (symbolRegex.test(emailInput2.value.slice(emailInput2.value.indexOf('@') +1 ,
         emailInput2.value.indexOf('.'))) ||
         (symbolRegex.test(emailInput2.value.slice(0, emailInput2.value.indexOf('@')))) ||
         (symbolRegex.test(emailInput2.value.slice(emailInput2.value.indexOf('.') +5)))) {
         signUpValidationError("Invalid character", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
         emailArr.push("Invalid character");
-        errors.push(emailArr);
       } else if (!dot.test(emailInput2.value)) {
         signUpValidationError("Invalid Email", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
         emailArr.push("Invalid Email");
-        errors.push(emailArr);
       } else if (emailErrorDivP.childElementCount > 1) {
         thereAndBackAgain(emailLabelError, emailInputClassName);
       } else if (emailInput2.value.length >= 30) {
         signUpValidationError("TLDR Lol", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
         emailArr.push("TLDR Lol");
-        errors.push(emailArr);
       } else {
         isEmail = true;
         hasError = false;
@@ -524,7 +516,6 @@ function validateEmail() {
     } else {
         signUpValidationError("Invalid Email", emailLabelError, emailInputClassName, emailErrorDivP, isEmail);
         emailArr.push("Invalid Email");
-        errors.push(emailArr);
     }
   }
 function signUpValidationError(text, label, className, parent) {
@@ -537,14 +528,97 @@ function signUpValidationError(text, label, className, parent) {
     label.classList.remove('hidden');
     label.classList.add('reveal');
 }
+function send(formattedDate) {
+    localStorage.setItem("name", nameInput.value);
+    localStorage.setItem("lastName", lastNameInput.value);
+    localStorage.setItem("id", idInput.value);
+    localStorage.setItem("phoneNumber", phoneNumberInput.value);
+    localStorage.setItem("birthDay", formattedDate);
+    localStorage.setItem("region", regionInput.value);
+    localStorage.setItem("address", addressInput.value);
+    localStorage.setItem("postalCode", postalCodeInput.value);
+    localStorage.setItem("password", passwordInput2.value);
+    localStorage.setItem("email", emailInput2.value);
+}
+window.onload = function() {
+    nameInput.value   = localStorage.getItem("name");
+    lastNameInput.value = localStorage.getItem("lastName");
+    idInput.value = localStorage.getItem("id");
+    phoneNumberInput.value = localStorage.getItem("phoneNumber");
+    birthDayInput.value = localStorage.getItem("birthDay");
+    regionInput.value = localStorage.getItem("region");
+    addressInput.value = localStorage.getItem("address");
+    postalCodeInput.value = localStorage.getItem("postalCode");
+    emailInput2.value = localStorage.getItem("email");
+    passwordInput2.value = localStorage.getItem("password");
+    repeatPasswordInput.value = localStorage.getItem("password");
+}
+var url = "https://api-rest-server.vercel.app/signup";
 var continueBtn = document.querySelector('#continue-btn')
-continueBtn.onclick = function() {
-    if (nameIsValid && lastNameIsValid && idIsValid && phoneNumberIsValid && birthDayIsValid && regionIsValid && addressIsValid && postalCodeIsValid && passwordIsValid && repeatPasswordIsValid) {
+continueBtn.onclick = function(event, formattedDate) {
+    submit(event);
+    if (nameIsValid
+        && lastNameIsValid
+        && idIsValid
+        && phoneNumberIsValid
+        && birthDayIsValid
+        && regionIsValid
+        && addressIsValid
+        && postalCodeIsValid
+        && passwordIsValid
+        && repeatPasswordIsValid) {
+    send(formattedDate);
+    var data = {
+        name: nameInput.value,
+        lastName: lastNameInput.value,
+        id: idInput.value,
+        phoneNumber: phoneNumberInput.value,
+        birthDay: formattedDate,
+        region: regionInput.value,
+        address: addressInput.value,
+        postalCode: postalCodeInput.value,
+        password: passwordInput2.value,
+        repeatPassword: repeatPasswordInput.value,
+        email: emailInput2.value
+    };
+    fetch(`${url}?name=${data.name}
+    &lastName=${data.lastName}
+    &dni=${data.id}
+    &phone=${data.phoneNumber}
+    &dob=${data.birthDay}
+    &city=${data.region}
+    &address=${data.address}
+    &zip=${data.postalCode}
+    &password=${data.password}
+    &email=${data.email}`)
+    .then(function(res) {
+        return res.json();
+    })
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        alert(error);
+    });
         var nice = successArr.join('\n');
         alert(nice);
-        window.location.href = "./log-in.html";
+        // window.location.href = "./log-in.html";
     } else {
+        errors.push(nameArr);
+        errors.push(lastNameArr);
+        errors.push(idArr);
+        errors.push(phoneArr);
+        errors.push(birthArr);
+        errors.push(regionArr);
+        errors.push(adressArr);
+        errors.push(postalArr);
+        errors.push(paswordArr);
+        errors.push(repeatArr);
+        errors.push(emailArr);
         var notNice = errors.join('\n');
         alert(notNice);
     }
 }
+function submit(event) {
+    event.preventDefault();
+  }

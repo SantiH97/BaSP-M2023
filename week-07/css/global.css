@@ -1,0 +1,43 @@
+:root {
+    --blue: #35365C;
+    --green: #AACE9B;
+    --gray: #D9D9D9;
+    --side-bar-green: #E5F2ED;
+    --nav-green: #51A884;
+    --button-green: #88A47C;
+    --input-green: #A4D1BD;
+    --login-singup-light-blue: #E3E6F2;
+    --register-green: #2C8008;
+    --registration-blue: #1921EE;
+    --registration-lighter-blue: #4362D0;
+    --error-red: #FC0A0A;
+}
+@font-face {
+    font-family:'Roboto-light';
+    src: url('../../assets/fonts/Roboto/Roboto-Thin.ttf') format('truetype');
+}
+@font-face {
+    font-family:'Roboto';
+    src: url('../../assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family:'Mulish';
+    src: url('../../assets/fonts/Mulish/Mulish-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+    font-family:'Inter';
+    src: url('../../assets/fonts/inter/Inter-Regular.ttf') format('truetype');
+}
+body {
+    min-width: 390px;
+    font-family: 'Roboto', sans-serif;
+}
+.blue-section {
+    background-color: var(--blue);
+}
+.gray-section {
+    background-color: var(--gray);
+}
+.green-section {
+    background-color: var(--green);
+}

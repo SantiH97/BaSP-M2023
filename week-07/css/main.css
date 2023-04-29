@@ -1,0 +1,555 @@
+/* --------------ASIDE-RED------------- */
+aside {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    max-width: 427px;
+    display: none;
+    float: left;
+    position: fixed;
+    top: 0;
+    overflow-x: hidden;
+    background-color: var(--side-bar-green);
+}
+aside > div {
+    height: 70px;
+}
+aside div h3 {
+    padding-top: 30px;
+    font-size: 40px;
+    text-align: center;
+    color: black;
+}
+aside div img {
+    padding-right: 30px;
+    float: right;
+    position: relative;
+    bottom: 40px;
+    vertical-align: top;
+}
+nav {
+    margin-top: 20px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    font-family: 'Roboto-light', sans-serif;
+    color: white;
+    background-color: var(--side-bar-green);
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+a:visited {
+    color: white;
+}
+div.border-scuare {
+    display: flex;
+    flex-direction: column;
+}
+h2 {
+    text-transform: uppercase;
+}
+img {
+    width: 50px;
+}
+/* -----------------FORM-RED------------ */
+form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+form div {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+textarea {
+    margin-top: 15px;
+    width: 90%;
+    height: 240px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+/* ------------------ASIDE-REST---------------- */
+.border-scuare {
+    margin: 20px 34px 0 23px;
+    padding: 10px 0 20px 0;
+    width: 370px;
+    height: 20px;
+    border: solid black 1px;
+    font-size: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: var(--nav-green);
+}
+.border-scuare h2 {
+    padding: 10px 10px 40px 10px;
+}
+div.border-scuare {
+    height: 400px;
+}
+.border-scuare div {
+    display: flex;
+}
+.border-scuare div div {
+    margin: 0 40px 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+.border-scuare div div img {
+    margin: 20px 0 0 10px;
+    padding-bottom: 20px;
+    width: 82px;
+    height: 82px;
+}
+.border-scuare div ul {
+    width: 61%;
+    font-size: 27px;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    text-transform: capitalize;
+}
+.border-scuare div ul li {
+    margin: 20px 0;
+    padding-bottom: 20px;
+    line-height: 1;
+}
+/* ----------------HOME-------------------- */
+#home {
+    padding: 20px 0;
+    text-align: center;
+}
+#left-text h2 {
+    margin: 0  15% 30px 15%;
+    width: 70%;
+    font-size: 40px;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+#left-text h3 {
+    margin: 0 10% 30px 10%;
+    width: 80%;
+    font-size: 30px;
+    font-weight: 600;
+}
+#left-text p {
+    margin: 0 5% 30px 5%;
+    width: 90%;
+    font-size: 20px;
+}
+#home img {
+    margin: 0 auto;
+    width: 248.36px;
+}
+/* ---------------OPTIONS-------------- */
+#options {
+    display: flex;
+    flex-flow: column;
+}
+#options div {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.options-img {
+    width: 110px;
+}
+.logo-less h4 {
+    margin-bottom: 20px;
+    padding: 16px 0;
+    width: 310px;
+    height: 35px;
+    border: solid black 1px;
+    border-radius: 5px;
+    box-shadow: 1px 4px 4px 0 #849F78;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    background-color: var(--button-green);
+    color: white;
+}
+#options div p {
+    display: none;
+}
+/* ---------------FORM-REST-------------------- */
+#form h3 {
+    padding: 40px 0;
+    font-size: 35px;
+    text-align: center;
+    color: white;
+}
+.input {
+    margin-bottom:15px;
+    width: 90%;
+    height: 35px;
+    max-width: 600px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: var(--input-green);
+}
+::placeholder,
+.input option {
+    width: 90%;
+    max-width: 300px;
+    font-size: 14px;
+    font-family: 'Roboto';
+    color: var(--input-green);
+}
+#x,
+#mail {
+    width: 15px;
+    height: 15px;
+}
+#buttons {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.form-btn {
+    margin: 20px 0;
+    width: 90px;
+    height: 37px;
+    font-size: 18px;
+    border-radius: 25px;
+    border-color: black;
+    border-width: 2px;
+    background-color: #49A37B;
+}
+/* -----------INFO---------------- */
+#info {
+    font-weight: 600;
+    color: white;
+}
+#info h2 {
+    padding-top: 20px;
+    margin-bottom: 30px;
+    font-size: 50px;
+    text-transform: capitalize;
+    text-align: center;
+}
+#info p {
+    padding-bottom: 100px;
+    margin: 0 5% 0 5%;
+    width: 90%;
+    height: 90%;
+    font-size: 24px;
+    line-height: 28px;
+    word-spacing: 15px;
+}
+/* -----------MEMBERSHIPS----------------- */
+#memberships-section {
+    padding-bottom: 40px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.whole-list {
+    width: 200px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    font-size: 15px;
+    color: black;
+}
+#activities h3 {
+    padding: 40px 0 0 0;
+    margin: 0;
+    align-self: center;
+    text-align: center;
+    font-size: 30px;
+}
+#problem-h3 {
+    width: 250px;
+}
+.whole-list ol {
+    padding: 10px 0 10px 0px;
+    font-size: 16px;
+    line-height: 19px;
+}
+.whole-list ul {
+    padding-bottom: 10px;
+}
+.whole-list ol,
+.whole-list ul {
+    width: 200px;
+}
+.violet-h {
+    padding: 20px 0 20px 0;
+    align-self: center;
+}
+.violet-h img {
+    display: none;
+}
+/* ----------FOOTER----------------- */
+#drop-shadow {
+    padding: 20px 0;
+    font-size: 12px;
+    text-align: center;
+    color: black;
+}
+#drop-shadow img {
+    padding: 10px 10px 0 10px;
+    width: 30px;
+}
+/* ------------DISPLAY----------------- */
+@media only screen and (min-width: 600px) {
+    textarea {
+        max-width: 600px;
+    }
+    #home {
+        display: flex;
+        align-items: center;
+    }
+    #left-text,
+    #left-text h2,
+    #left-text h3,
+    #left-text p {
+        padding: 10px;
+        margin: 10px;
+        width: 100%;
+        align-self: center;
+        text-align: left;
+    }
+    #home img {
+        margin: 0 20px 0 50px;
+        padding: 0;
+    }
+    #options {
+        padding-bottom: 30px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-content: space-around;
+        font-size: 23px;
+        color: white;
+    }
+    #options div {
+        width: 48%;
+        height: 48%;
+        display: flex;
+        flex-flow: column;
+        align-content: center;
+        justify-content: center;
+    }
+    #options div div {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        flex-flow: row;
+        align-self: center;
+    }
+    #options > div img {
+        width: 90px;
+    }
+    #options div p {
+        width: 75%;
+        height: 30%;
+        max-width: 400px;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo-less h4 {
+        padding: 20px 0 0 0;
+        margin-top: 25px;
+        width: 70%;
+        height: 50px;
+        max-width: 300px;
+        font-size: 23px;
+        text-align: center;
+    }
+    .logo-less img {
+        padding: 0;
+        margin: 0;
+    }
+    .whole-list {
+        width: 600px;
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .membership-list li {
+        margin-left: 40px;
+        width: 550px;
+    }
+    h4.violet-h {
+        margin-left: 40px;
+        align-self: flex-start;
+    }
+    .whole-list#activities,
+    div#activities h3,
+    div#activities ol,
+    div#activities li {
+        width: 300px;
+        font-size: 40px;
+        line-height: 47px;
+    }
+    div#activities ol {
+        padding: 20px 0 40px 30px;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    main, footer {
+        margin-left: 427px;
+    }
+    aside {
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    form {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    form div {
+        padding-bottom: 30px;
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    textarea {
+        margin-top: 100px;
+        max-width: 900px;
+    }
+    #options div p {
+        margin-left: 18%;
+        max-width: 350px;
+        min-width: 250px;
+    }
+    #form h3 {
+        padding-bottom: 0px;
+    }
+    .input {
+        margin-bottom: 30px;
+        width: 70%;
+        height: 35px;
+        box-sizing: border-box;
+    }
+    ::placeholder, .input option {
+        font-size: 14px;
+        font-family: 'Roboto';
+        color: #A4D1BD;
+    }
+    #x,
+    #mail {
+        width: 15px;
+        height: 15px;
+    }
+    #buttons {
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    .form-btn {
+        margin: 20px 0;
+        width: 90px;
+        height: 37px;
+        font-size: 18px;
+        border-radius: 25px;
+        border-color: black;
+        border-width: 2px;
+        background-color: #49A37B;
+    }
+    #info h2 {
+        padding-left: 30px;
+        text-align: left;
+    }
+    #info p {
+        font-size: 50px;
+        line-height: 1.2;
+        word-spacing: 30px;
+    }
+    #memberships-section {
+        padding: 15px;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+        font-size: 24px;
+    }
+    #activities h3#problem-h3,
+    #activities ol.membership-list li {
+        padding: 0;
+        margin: 0;
+        width: auto;
+        font-size: 24px;
+        line-height: normal;
+    }
+    #activities ol.membership-list li {
+        width: 150px;
+    }
+    .membership-list li,
+    .violet-h {
+        width: auto;
+        font-size: 24px;
+    }
+    .whole-list,
+    .whole-list ol,
+    .whole-list ul,
+    .whole-list h3,
+    #activities h3,
+    .small-h4,
+    .violet-h,
+    .membership-list {
+        padding: 0;
+        margin: 0;
+        width: auto;
+        height: 100%;
+        font-size: 24px;
+        line-height: normal;
+    }
+    .whole-list {
+        padding: 30px 0 30px 10px;
+        width: 46%;
+        max-width: 400px;
+    }
+    .violet-h,
+    #activities h3 {
+        margin-bottom: 20px;
+        width: auto;
+        max-width: 340px;
+    }
+    .violet-h,
+    #problem-h3.violet-h {
+        padding: 8px 0 8px 5px;
+        width: auto;
+        height: 30%;
+        align-self: flex-start;
+        border: solid #373867;
+        border-radius: 5px;
+        text-align: left;
+        color: #373867;
+    }
+    .violet-h img {
+        width: 16px;
+        display: inline-block;
+    }
+    #drop-shadow {
+        padding: 30px;
+        font-size: 32px;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #img-f {
+        width: 30%;
+        min-width: 330px;
+    }
+    #drop-shadow img {
+        width: 100%;
+        max-width: 71px;
+    }
+}
