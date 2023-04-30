@@ -21,14 +21,3 @@ img#back-btn {
     box-shadow: 4px 4px 14px -9px;
     background-color: white;
 }
-#continue-btn {
-    margin: 19px 40%;
-    width: 20%;
-    height: 50px;
-    text-align: center;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    color: white;
-    background-color: var(--green);
-}

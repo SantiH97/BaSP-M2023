@@ -68,6 +68,17 @@ p {
     height: 20px;
     float: left;
 }
+#continue-btn {
+    margin: 19px 40%;
+    width: 20%;
+    height: 50px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background-color: var(--green);
+}
 @media only screen and (min-width: 600px) {
     section {
         width: 60%;

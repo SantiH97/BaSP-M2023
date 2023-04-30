@@ -77,6 +77,17 @@ input.red {
 input.red::placeholder {
     color: var(--error-red);
 }
+#continue-btn {
+    margin: 19px 40%;
+    width: 20%;
+    height: 50px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background-color: var(--green);
+}
 @media only screen and (min-width: 1024px) {
     form {
         flex-flow: row;
