@@ -22,6 +22,10 @@ errorImg.className = ("error-img");
 passwordErrorImg.className = ("error-img");
 passwordErrorImg.setAttribute("src", "../../assets/images/error.png");
 errorImg.setAttribute("src", "../../assets/images/error.png");
+var modal = document.getElementById("myModal");
+var bigDaddy = modal.parentNode;
+var modalDaddy = document.querySelector("#modal-text").parentNode;
+var span = document.getElementsByClassName("close")[0];
 
 var url = "https://api-rest-server.vercel.app/login";
 
@@ -59,7 +63,6 @@ function captainHook() {
 }
 function alertFn () {
   if (emailPassed === true && passwordPassed === true) {
-  alert ("Email: " + emailInput.value + "\n" + "Valid Password ");
     var data = {
       email: emailInput.value,
       password: passwordInput.value
@@ -70,18 +73,62 @@ function alertFn () {
     })
     .then(function(data) {
       if (data.success) {
-        alert("Success!!!" + "\n" + data.msg);
+        modal.classList.remove('hidden');
+        modal.classList.add('modal');
+        var h2 = document.createElement('h2');
+        h2.classList.add('modal-tittle');
+        h2.innerText = "Success!!!" + "\n";
+        modalDaddy.appendChild(h2);
+        var child1 = document.createElement('p');
+        child1.classList.add('children');
+        modalDaddy.appendChild(child1);
+        child1.innerText = data.msg;
       } else {
-        alert("Error: " + data.msg);
+        modal.classList.remove('hidden');
+        modal.classList.add('modal');
+        var h2 = document.createElement('h2');
+        h2.classList.add('modal-tittle2');
+        h2.innerText = "An Issue was found";
+        modalDaddy.appendChild(h2);
+        var child2 = document.createElement('p');
+        child2.classList.add('children2');
+        modalDaddy.appendChild(child2);
+        child2.innerText = data.msg;
       }
     })
     .catch(function(error) {
-      alert(error + " " + data.msg);
+      modal.classList.remove('hidden');
+      modal.classList.add('modal');
+      var h2 = document.createElement('h2');
+      h2.classList.add('modal-tittle2');
+      h2.innerText = "An Issue was found";
+      modalDaddy.appendChild(h2);
+      var child2 = document.createElement('p');
+      child2.classList.add('children2');
+      modalDaddy.appendChild(child2);
+      child2.innerText = error + " something bad happened";
     });
   } else if (emailPassed === false && passwordPassed === true) {
-    alert ("Error: " + errorBtn.textContent + "\n" + "Valid Password");
+    modal.classList.remove('hidden');
+      modal.classList.add('modal');
+      var h2 = document.createElement('h2');
+      h2.classList.add('modal-tittle2');
+      h2.innerText = "An Issue was found";
+      modalDaddy.appendChild(h2);
+      var child2 = document.createElement('p');
+      child2.classList.add('children2');
+      modalDaddy.appendChild(child2);
+      child2.innerText = "Error: " + errorBtn.textContent;
   } else if (emailPassed === true && passwordPassed === false) {
-    alert ("Email: " + emailInput.value + "\n" + "Error: " + passwordErrorBtn.innerText);
+    modal.classList.add('modal');
+    var h2 = document.createElement('h2');
+    h2.classList.add('modal-tittle2');
+    h2.innerText = "An Issue was found";
+    modalDaddy.appendChild(h2);
+    var child2 = document.createElement('p');
+    child2.classList.add('children2');
+    modalDaddy.appendChild(child2);
+    child2.innerText = "Error: " + passwordErrorBtn.innerText;
   } else if (emailPassed === false && passwordPassed === false) {
     alert ("Error: " + errorBtn.textContent + "\n" + "Error: " + passwordErrorBtn.innerText);
   } else {
@@ -149,5 +196,18 @@ function logInValidationSuccess() {
 function submit(event) {
   event.preventDefault();
 }
+span.onclick = function() {
+  modal.classList.remove('modal');
+  modal.classList.add('hidden');
+  modalDaddy.replaceChildren(span);
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.classList.remove('modal');
+    modal.classList.add('hidden');
+    modalDaddy.replaceChildren(span);
+  }
+}
+
 
 

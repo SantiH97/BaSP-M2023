@@ -96,8 +96,8 @@ nameInput.addEventListener("blur", nameFn);
         nameIsValid = true;
         var success = "Name: " + nameInput.value;
         successArr.push(success);
-    };
-};
+    }
+}
 lastNameInput.addEventListener("blur", lastNameFn);
  function lastNameFn() {
     validateChars(lastNameInput, lastNameLabelError, lastNameErrorDaddy, lastNameInputClassName, !both, lastNameArr);
@@ -110,8 +110,8 @@ lastNameInput.addEventListener("blur", lastNameFn);
         lastNameIsValid = true;
         var success = "Last name: " + lastNameInput.value;
         successArr.push(success);
-    };
-};
+    }
+}
 idInput.addEventListener("blur", idFn);
 function idFn() {
     validateNumbs(idInput, idLabelError, idErrorDaddy, idInputClassName, idArr);
@@ -124,8 +124,8 @@ function idFn() {
         idIsValid = true;
         var success = "Id: " + idInput.value;
         successArr.push(success);
-    };
-};
+    }
+}
 phoneNumberInput.addEventListener("blur", phoneFn);
 function phoneFn() {
     validateNumbs(phoneNumberInput, phoneNumberLabelError, phoneNumberErrorDaddy,phoneNumberInputClassName, phoneArr);
@@ -139,8 +139,8 @@ function phoneFn() {
         phoneNumberIsValid = true;
         var success = "Phone Number: " + phoneNumberInput.value;
         successArr.push(success);
-    };
-};
+    }
+}
 dobInput.addEventListener("blur", dobFn);
 function dobFn() {
   validateEmpty(dobInput, dobLabelError);
@@ -160,7 +160,7 @@ function dobFn() {
     dobIsValid = true;
     var success = "Date of Birth: " + oGFormattedDate;
     successArr.push(success);
-  };
+  }
 }
 cityInput.addEventListener("blur", cityFn);
 function cityFn() {
@@ -174,8 +174,8 @@ function cityFn() {
         cityIsValid = true;
         var success = "City: " + cityInput.value;
         successArr.push(success);
-    };
-};
+    }
+}
 addressInput.addEventListener("blur", addressFn);
 function addressFn() {
     var cleanAdrres = addressInput.value.trim();
@@ -188,10 +188,10 @@ function addressFn() {
         adressArr.push(" Input must be only letters");
         isAddress = false;
         hasError = true;
-        };
+        }
     } else {
         isAddress = true;
-    };
+    }
     if (hasError) {
         hasError = false;
         return;
@@ -199,8 +199,8 @@ function addressFn() {
         addressIsValid = true;
         var success = "Address: " + addressInput.value;
         successArr.push(success);
-    };
-};
+    }
+}
 zipInput.addEventListener("blur", zipFn);
 function zipFn() {
     validateNumbs(zipInput, zipLabelError, zipErrorDaddy, zipInputClassName, zipArr);
@@ -213,8 +213,8 @@ function zipFn() {
         zipIsValid = true;
         var success = "Zip: " + zipInput.value;
         successArr.push(success);
-    };
-};
+    }
+}
 passwordInput2.addEventListener("blur", passwordFn);
 function passwordFn() {
     validateEmpty(passwordInput2, passwordLabelError);
@@ -226,13 +226,14 @@ function passwordFn() {
         passwordIsValid = true;
         var success = "Valid password";
         successArr.push(success);
-    };
-};
+    }
+}
 repeatInput.addEventListener("blur", repeatFn);
 function repeatFn() {
     validateEmpty(repeatInput, repeatLabelError);
+    moreThan(repeatInput, repeatLabelError, repeatErrorDaddy, repeatInputClassName, 8, repeatArr);
     if (repeatInput.value !== passwordInput2.value) {
-        text = "Not a match";
+        var text = "Not a match";
         showErrorFn(text, repeatLabelError, repeatInputClassName, repeatErrorDaddy, repeatInput);
         repeatArr.push(" Not a match");
         isEqual = false;
@@ -246,8 +247,8 @@ function repeatFn() {
         repeatIsValid = true;
         var success = "Paswords match";
         successArr.push(success);
-    };
-};
+    }
+}
 emailInput2.addEventListener("blur", emailFn);
 function emailFn() {
     validateEmpty(emailInput2, emailLabelError);
@@ -259,64 +260,64 @@ function emailFn() {
         emailIsValid = false;
         var success = "Email: " + emailInput2.value;
         successArr.push(success);
-    };
-};
+    }
+}
 // FOCUS----------------------FOCUS-----------------------FOCUS
 nameInput.addEventListener("focus", nameFocusFn);
 function nameFocusFn() {
     thereAndBackAgain(nameLabelError, nameInputClassName, nameInput);
     nameArr.length = 0;
-};
+}
 lastNameInput.addEventListener("focus", lastNameFocusFn);
 function lastNameFocusFn() {
     thereAndBackAgain(lastNameLabelError, lastNameInputClassName, lastNameInput);
     lastNameArr.length = 0;
-};
+}
 idInput.addEventListener("focus", idFocusFn);
 function idFocusFn() {
     thereAndBackAgain(idLabelError, idInputClassName, idInput);
     idArr.length = 0;
-};
+}
 phoneNumberInput.addEventListener("focus", phoneFocusFn);
 function phoneFocusFn() {
     thereAndBackAgain(phoneNumberLabelError, phoneNumberInputClassName, phoneNumberInput);
     phoneArr.length = 0;
-};
+}
 dobInput.addEventListener("focus", dobFocusFn);
 function dobFocusFn() {
     thereAndBackAgain(dobLabelError, dobInputClassName, dobInput);
     birthArr.length = 0;
-};
+}
 cityInput.addEventListener("focus", cityFocusFn);
 function cityFocusFn() {
     thereAndBackAgain(cityLabelError, cityInputClassName, cityInput);
     cityArr.length = 0;
-};
+}
 addressInput.addEventListener("focus", addressFocusFn);
 function addressFocusFn() {
     thereAndBackAgain(addressLabelError, addressInputClassName, addressInput);
     adressArr.length = 0;
-};
+}
 zipInput.addEventListener("focus", zipFocusFn);
 function zipFocusFn() {
     thereAndBackAgain(zipLabelError, zipInputClassName, zipInput);
     zipArr.length = 0;
-};
+}
 passwordInput2.addEventListener("focus", passwordFocusFn);
 function passwordFocusFn() {
     thereAndBackAgain(passwordLabelError, passwordInput2ClassName, passwordInput2);
     paswordArr.length = 0;
-};
+}
 repeatInput.addEventListener("focus", repeatFocusFn);
 function repeatFocusFn() {
     thereAndBackAgain(repeatLabelError, repeatInputClassName, repeatInput);
     repeatArr.length = 0;
-};
+}
 emailInput2.addEventListener("focus", emailFocusFn);
 function emailFocusFn() {
     thereAndBackAgain(emailLabelError, emailInputClassName, emailInput2);
     emailArr.length = 0;
-};
+}
 // FUNCTIONS----------------------FUNCTIONS-----------------------FUNCTIONS
 function showErrorFn(text, label, className, parent, input) {
     var child = document.createElement('label');
@@ -328,23 +329,23 @@ function showErrorFn(text, label, className, parent, input) {
     label.classList.remove('hidden');
     label.classList.add('reveal');
     input.classList.add('red');
-};
+}
 function validateEmpty(contentInput, label) {
     if (contentInput.value.trim() === "") {
         label.classList.remove('hidden');
         label.classList.add('reveal');
         hasError = true;
-        return isEmpty = false;
+        isEmpty = false;
     } else {
-        return isEmpty = true;
+        isEmpty = true;
     }
-};
+}
 function validateChars(input, label, parent, className, both, array) {
     var arr = [];
     for (var i = 0; i < input.value.length; i++) {
       var ascii = input.value.charCodeAt(i);
       arr.push(ascii);
-    };
+    }
     for (var j = 0; j < arr.length; j++) {
       if (both === false && (arr[j] < 65 || arr[j] > 90 && arr[j] < 97 || arr[j] > 122)) {
         var child;
@@ -358,7 +359,6 @@ function validateChars(input, label, parent, className, both, array) {
         }
       } else if (both === true) {
         if ((arr[j] < 65 || arr[j] > 90 && arr[j] < 97 || arr[j] > 122) && (arr[j] < 48 || arr[j] > 57)) {
-            var child;
             if (!child) {
                 text = "Invalid character";
                 showErrorFn(text, label, className, parent, input);
@@ -374,13 +374,13 @@ function validateChars(input, label, parent, className, both, array) {
         isLetter = true;
       }
     }
-};
+}
 function validateNumbs(input, label, parent, className, array) {
     var arr = [];
     for (var i = 0; i < input.value.length; i++) {
       var ascii = input.value.charCodeAt(i);
       arr.push(ascii);
-    };
+    }
     for (var j = 0; j < arr.length; j++) {
       if (arr[j] < 48 || arr[j] > 57) {
         var child;
@@ -396,7 +396,7 @@ function validateNumbs(input, label, parent, className, array) {
         isNumber = true;
       }
     }
-};
+}
 function moreThan(input, label, parent, className, numb, array) {
     if (input.value.length < numb) {
         var child;
@@ -410,7 +410,7 @@ function moreThan(input, label, parent, className, numb, array) {
     } else {
         isbigger = true;
     }
-};
+}
 function lessThan(input, label, parent, className, numb, array) {
     if (input.value.length > numb) {
         var child;
@@ -424,7 +424,7 @@ function lessThan(input, label, parent, className, numb, array) {
     } else {
         isSmaller = true;
     }
-};
+}
 function validateEmail() {
     var middleBeginning = emailInput2.value.indexOf('@') + 1;
     var middleEnd = emailInput2.value.lastIndexOf('.');
@@ -452,7 +452,7 @@ function validateEmail() {
       } else if (emailErrorDaddy.childElementCount > 1) {
         thereAndBackAgain(emailLabelError, emailInputClassName);
       } else if (emailInput2.value.length >= 40) {
-        showErrorFn("TLDR Lol", emailLabelError, emailInputClassName, emailErrorDivP, emailInput2);
+        showErrorFn("TLDR Lol", emailLabelError, emailInputClassName, emailErrorDaddy, emailInput2);
         emailArr.push(" TLDR Lol");
       } else {
         isEmail = true;
@@ -464,18 +464,18 @@ function validateEmail() {
         showErrorFn("Invalid Email", emailLabelError, emailInputClassName, emailErrorDaddy, emailInput2);
         emailArr.push(" Invalid Email");
     }
-};
+}
 function thereAndBackAgain(label, className, input) {
     var children = document.querySelectorAll('.reveal');
-    if (isLetter === false
-        || isNumber === false
-        || isbigger === false
-        || isSmaller === false
-        || isBoth === false
-        || isEqual === false
-        || isEmail === false
-        || isAddress === false
-        || dobIsValid === false) {
+    if (isLetter === false ||
+        isNumber === false ||
+        isbigger === false ||
+        isSmaller === false ||
+        isBoth === false ||
+        isEqual === false ||
+        isEmail === false ||
+        isAddress === false ||
+        dobIsValid === false) {
         for (var i = 0; i < children.length; i++) {
             if (children[i].classList.contains(className)
             || children[i].classList.contains('size')
@@ -497,7 +497,7 @@ function thereAndBackAgain(label, className, input) {
         label.classList.remove('reveal');
         label.classList.add('hidden');
     }
-};
+}
 // STORAGE----------------------STORAGE-----------------------STORAGE
 function send() {
     localStorage.setItem("name", nameInput.value);
@@ -510,7 +510,7 @@ function send() {
     localStorage.setItem("zip", zipInput.value);
     localStorage.setItem("password", passwordInput2.value);
     localStorage.setItem("email", emailInput2.value);
-};
+}
 window.onload = function() {
     nameInput.value   = localStorage.getItem("name");
     lastNameInput.value = localStorage.getItem("lastName");
@@ -527,6 +527,10 @@ window.onload = function() {
 // FETCH----------------------FETCH-----------------------FETCH
 var url = "https://api-rest-server.vercel.app/signup";
 var continueBtn = document.querySelector('#continue-btn');
+var modal = document.getElementById("myModal");
+var bigDaddy = modal.parentNode;
+var modalDaddy = document.querySelector("#modal-text").parentNode;
+var span = document.getElementsByClassName("close")[0];
 continueBtn.addEventListener("click", function(e) {
     e.preventDefault();
     nameFocusFn();
@@ -551,6 +555,7 @@ continueBtn.addEventListener("click", function(e) {
     paswordArr.length = 0;
     repeatArr.length = 0;
     emailArr.length = 0;
+    successArr.length = 0;
     nameFn();
     lastNameFn();
     idFn();
@@ -562,16 +567,16 @@ continueBtn.addEventListener("click", function(e) {
     passwordFn();
     repeatFn();
     emailFn();
-    if (nameIsValid
-        && lastNameIsValid
-        && idIsValid
-        && phoneNumberIsValid
-        && dobIsValid
-        && cityIsValid
-        && addressIsValid
-        && zipIsValid
-        && passwordIsValid
-        && repeatIsValid) {
+    if (nameIsValid &&
+        lastNameIsValid &&
+        idIsValid &&
+        phoneNumberIsValid &&
+        dobIsValid &&
+        cityIsValid &&
+        addressIsValid &&
+        zipIsValid &&
+        passwordIsValid &&
+        repeatIsValid) {
     send();
     var dob = dobInput.value.split('-');
     var formattedDate = dob[1] + '/' + dob[2] + '/' + dob[0];
@@ -594,33 +599,85 @@ continueBtn.addEventListener("click", function(e) {
     })
     .then(function(data) {
         if (data.success) {
-            alert("Success!!!" + "\n" + data.msg);
+            var child1 = document.createElement('p');
+            child1.innerText = ("\n" + "Success!!!" + "\n" + data.msg);
+            child1.setAttribute('id','success');
+            child1.classList.add('children');
+            modalDaddy.appendChild(child1);
             window.location.href = "./log-in.html";
           } else {
-            throw new error("oops");
+            var notNice = errors.join('\n');
+            modal.classList.remove('hidden');
+            modal.classList.add('modal');
+            var h2 = document.createElement('h2');
+            h2.classList.add('modal-tittle2');
+            h2.innerText = "An issue was found";
+            modalDaddy.appendChild(h2);
+            var child3 = document.createElement('p');
+            child3.classList.add('children2');
+            modalDaddy.appendChild(child3);
+            child3.innerText = notNice;
           }
     })
     .catch(function(error) {
         alert(error);
+        modal.classList.remove('hidden');
+        modal.classList.add('modal');
+        var h2 = document.createElement('h2');
+        h2.classList.add('modal-tittle2');
+        h2.innerText = "An issue was found";
+        modalDaddy.appendChild(h2);
+        var child3 = document.createElement('p');
+        child3.classList.add('children2');
+        modalDaddy.appendChild(child3);
+        child3.innerText = error;
     });
-        successArr.unshift("New User Added !!!" + "\n");
+        modal.classList.remove('hidden');
+        modal.classList.add('modal');
+        var h2 = document.createElement('h2');
+        h2.classList.add('modal-tittle');
+        h2.innerText = "New User Added !!!";
+        modalDaddy.appendChild(h2);
         var nice = successArr.join('\n');
-        alert(nice);
+        var child2 = document.createElement('p');
+        child2.innerText = nice;
+        child2.classList.add('children');
+        modalDaddy.appendChild(child2);
     } else {
         errors.length = 0;
-        errors.push("INVALID INPUTS FOUND: " + "\n")
-        errors.push("NAME:  " + nameArr);
-        errors.push("LAST NAME:  " + lastNameArr);
-        errors.push("ID:  " + idArr);
-        errors.push("PHONE NUMBER:  " + phoneArr);
-        errors.push("DATE OF BIRTH:  " + birthArr);
-        errors.push("CITY:  " + cityArr);
-        errors.push("ADDRESS:  " + adressArr);
-        errors.push("ZIP:  " + zipArr);
-        errors.push("PASSWORD:  " + paswordArr);
-        errors.push("REPEAT PASSWORD:  " + repeatArr);
-        errors.push("EMAIL:  " + emailArr);
+        errors.push("Name:" + "           " + nameArr);
+        errors.push("Last Name:" + "       " + lastNameArr);
+        errors.push("Id:"+ "              " + idArr);
+        errors.push("Phone Number:" + "    " + phoneArr);
+        errors.push("Date of Birth:" + "   " + birthArr);
+        errors.push("City:" + "            " + cityArr);
+        errors.push("Address:" + "         " + adressArr);
+        errors.push("Ziz:" + "             " + zipArr);
+        errors.push("Password:" + "        " + paswordArr);
+        errors.push("Repeat Password:" + " " + repeatArr);
+        errors.push("EmailL:" + "          " + emailArr);
         var notNice = errors.join('\n');
-        alert(notNice);
+        modal.classList.remove('hidden');
+        modal.classList.add('modal');
+        var h2 = document.createElement('h2');
+        h2.classList.add('modal-tittle2');
+        h2.innerText = "An issue was found";
+        modalDaddy.appendChild(h2);
+        var child3 = document.createElement('p');
+        child3.classList.add('children2');
+        modalDaddy.appendChild(child3);
+        child3.innerText = notNice;
     }
 });
+span.onclick = function() {
+  modal.classList.remove('modal');
+  modal.classList.add('hidden');
+  modalDaddy.replaceChildren(span);
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.classList.remove('modal');
+    modal.classList.add('hidden');
+    modalDaddy.replaceChildren(span);
+  }
+}

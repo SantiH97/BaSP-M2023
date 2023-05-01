@@ -20,6 +20,12 @@
         </h1>
     </header>
     <main>
+        <div id="myModal" class="hidden">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="modal-text"></p>
+            </div>
+        </div>
         <section>
             <div>
                 <a href="../views/log-in.html">
@@ -75,7 +81,7 @@
                         </div>
                     </div>
                     <input id="phone-number" class="register-input"
-                    type="text" name="phone-number" placeholder="Phone Number">
+                    type="text" name="phone-number" placeholder="(123)7654321">
                     <div>
                         <label for="date-of-birth">
                             Date of Birth
@@ -86,7 +92,7 @@
                             </label>
                         </div>
                     </div>
-                    <input id="date-of-birth" class="register-input" type="date" name="date-of-birth" placeholder="birth day">
+                    <input id="date-of-birth" class="register-input" type="date" name="date-of-birth">
                     <div>
                         <label for="password">
                             Password
