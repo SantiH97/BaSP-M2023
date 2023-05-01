@@ -30,7 +30,9 @@ var span = document.getElementsByClassName("close")[0];
 var url = "https://api-rest-server.vercel.app/login";
 
 logInBtn.onclick = function(event) {
-  submit(event)
+  submit(event);
+  validatePassword();
+  validateEmail();
   alertFn();
 }
 
@@ -130,14 +132,30 @@ function alertFn () {
     modalDaddy.appendChild(child2);
     child2.innerText = "Error: " + passwordErrorBtn.innerText;
   } else if (emailPassed === false && passwordPassed === false) {
-    alert ("Error: " + errorBtn.textContent + "\n" + "Error: " + passwordErrorBtn.innerText);
+    modal.classList.add('modal');
+    var h2 = document.createElement('h2');
+    h2.classList.add('modal-tittle2');
+    h2.innerText = "An Issue was found";
+    modalDaddy.appendChild(h2);
+    var child2 = document.createElement('p');
+    child2.classList.add('children2');
+    modalDaddy.appendChild(child2);
+    child2.innerText = "Error: " + errorBtn.textContent + "\n" + "Error: " + passwordErrorBtn.innerText;
   } else {
-    alert ("Error: Email Required" + "\n" + "Error: Password Required");
+    modal.classList.add('modal');
+    var h2 = document.createElement('h2');
+    h2.classList.add('modal-tittle2');
+    h2.innerText = "An Issue was found";
+    modalDaddy.appendChild(h2);
+    var child2 = document.createElement('p');
+    child2.classList.add('children2');
+    modalDaddy.appendChild(child2);
+    child2.innerText = "Error: Email Required" + "\n" + "Error: Password Required";
   }
 }
 
 function validatePassword() {
-    if (passwordInput.value.length >= 8) {
+    if (passwordInput.value.trim().length >= 8) {
       passwordBorder.style.borderBottom = "2px solid var(--green)"
       passwordPassed = true;
     } else {

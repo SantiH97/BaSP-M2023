@@ -595,6 +595,7 @@ continueBtn.addEventListener("click", function(e) {
     };
     fetch(`${url}?name=${data.name}&lastName=${data.lastName}&dni=${data.id}&phone=${data.phoneNumber}&dob=${formattedDate}&city=${data.city}&address=${data.address}&zip=${data.zip}&password=${data.password}&email=${data.email}`)
     .then(function(res) {
+        throw new Error("Shit happened");
         return res.json();
     })
     .then(function(data) {
@@ -604,7 +605,7 @@ continueBtn.addEventListener("click", function(e) {
             child1.setAttribute('id','success');
             child1.classList.add('children');
             modalDaddy.appendChild(child1);
-            window.location.href = "./log-in.html";
+            // window.location.href = "./log-in.html";
           } else {
             var notNice = errors.join('\n');
             modal.classList.remove('hidden');
@@ -620,7 +621,6 @@ continueBtn.addEventListener("click", function(e) {
           }
     })
     .catch(function(error) {
-        alert(error);
         modal.classList.remove('hidden');
         modal.classList.add('modal');
         var h2 = document.createElement('h2');
@@ -636,7 +636,7 @@ continueBtn.addEventListener("click", function(e) {
         modal.classList.add('modal');
         var h2 = document.createElement('h2');
         h2.classList.add('modal-tittle');
-        h2.innerText = "New User Added !!!";
+        h2.innerText = "Saved as default";
         modalDaddy.appendChild(h2);
         var nice = successArr.join('\n');
         var child2 = document.createElement('p');
