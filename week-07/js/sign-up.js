@@ -526,49 +526,72 @@ window.onload = function() {
     passwordInput2.value = localStorage.getItem("password");
     repeatInput.value = localStorage.getItem("password");
 };
-// FETCH----------------------FETCH-----------------------FETCH
-var url = "https://api-rest-server.vercel.app/signup";
-var continueBtn = document.querySelector('#continue-btn');
+// MODAL----------------------MODAL-----------------------MODAL
 var modal = document.getElementById("myModal");
 var bigDaddy = modal.parentNode;
 var modalDaddy = document.querySelector("#modal-text").parentNode;
 var span = document.getElementsByClassName("close")[0];
+function errorsPush() {
+    if (nameArr.length !== 0) {
+        errors.push("Name:" + "           " + nameArr);
+    } if (lastNameArr.length !== 0) {
+        errors.push("Last Name:" + "       " + lastNameArr);
+    } if (idArr.length !== 0) {
+        errors.push("Id:"+ "              " + idArr);
+    } if (phoneArr.length !== 0) {
+        errors.push("Phone Number:" + "    " + phoneArr);
+    } if (birthArr.length !== 0) {
+        errors.push("Date of Birth:" + "   " + birthArr);
+    } if (cityArr.length !== 0) {
+        errors.push("City:" + "            " + cityArr);
+    } if (adressArr.length !== 0) {
+        errors.push("Address:" + "         " + adressArr);
+    } if (zipArr.length !== 0) {
+        errors.push("Ziz:" + "             " + zipArr);
+    } if (paswordArr.length !== 0) {
+        errors.push("Password:" + "        " + paswordArr);
+    } if (repeatArr.length !== 0) {
+        errors.push("Repeat Password:" + " " + repeatArr);
+    } if (emailArr.length !== 0) {
+        errors.push("EmailL:" + "          " + emailArr);
+    }
+}
+function modalFn(tittle, message, childClass, arrayJoin) {
+    var array = arrayJoin.join('\n');
+    modal.classList.remove('hidden');
+    modal.classList.add('modal');
+    var h2 = document.createElement('h2');
+    h2.classList.add(tittle);
+    h2.innerText = message;
+    modalDaddy.appendChild(h2);
+    var child = document.createElement('p');
+    child.classList.add(childClass);
+    modalDaddy.appendChild(child);
+    child.innerText = array;
+}
+span.onclick = function() {
+    modal.classList.remove('modal');
+    modal.classList.add('hidden');
+    modalDaddy.replaceChildren(span);
+    if (success) {
+      window.location.href = "./log-in.html";
+    }
+  }
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.classList.remove('modal');
+      modal.classList.add('hidden');
+      modalDaddy.replaceChildren(span);
+    } else if (success) {
+      window.location.href = "./log-in.html";
+    }
+  }
+// FETCH----------------------FETCH-----------------------FETCH
+var url = "https://api-rest-server.vercel.app/signup";
+var continueBtn = document.querySelector('#continue-btn');
 continueBtn.addEventListener("click", function(e) {
     e.preventDefault();
-    nameFocusFn();
-    lastNameFocusFn();
-    idFocusFn();
-    phoneFocusFn();
-    dobFocusFn();
-    cityFocusFn();
-    addressFocusFn();
-    zipFocusFn();
-    passwordFocusFn();
-    repeatFocusFn();
-    emailFocusFn();
-    nameArr.length = 0;
-    lastNameArr.length = 0;
-    idArr.length = 0;
-    phoneArr.length = 0;
-    birthArr.length = 0;
-    cityArr.length = 0;
-    adressArr.length = 0;
-    zipArr.length = 0;
-    paswordArr.length = 0;
-    repeatArr.length = 0;
-    emailArr.length = 0;
-    successArr.length = 0;
-    nameFn();
-    lastNameFn();
-    idFn();
-    phoneFn();
-    dobFn();
-    cityFn();
-    addressFn();
-    zipFn();
-    passwordFn();
-    repeatFn();
-    emailFn();
+    goodAsNew();
     if (nameIsValid &&
         lastNameIsValid &&
         idIsValid &&
@@ -610,82 +633,54 @@ continueBtn.addEventListener("click", function(e) {
             var success = true;
             return success;
           } else {
-            var notNice = errors.join('\n');
-            modal.classList.remove('hidden');
-            modal.classList.add('modal');
-            var h2 = document.createElement('h2');
-            h2.classList.add('modal-tittle2');
-            h2.innerText = "An issue was found";
-            modalDaddy.appendChild(h2);
-            var child3 = document.createElement('p');
-            child3.classList.add('children2');
-            modalDaddy.appendChild(child3);
-            child3.innerText = notNice;
+            modalFn('modal-tittle2', "An issue was found", 'children2', errors);
           }
     })
     .catch(function(error) {
-        modal.classList.remove('hidden');
-        modal.classList.add('modal');
-        var h2 = document.createElement('h2');
-        h2.classList.add('modal-tittle2');
-        h2.innerText = "An issue was found";
-        modalDaddy.appendChild(h2);
-        var child3 = document.createElement('p');
-        child3.classList.add('children2');
-        modalDaddy.appendChild(child3);
-        child3.innerText = error;
+        errorsPush();
+        modalFn('modal-tittle2', "An issue was found", 'children2', errors);
+        child.innerText = error;
     });
-        modal.classList.remove('hidden');
-        modal.classList.add('modal');
-        var h2 = document.createElement('h2');
-        h2.classList.add('modal-tittle');
-        h2.innerText = "Saved as default";
-        modalDaddy.appendChild(h2);
-        var nice = successArr.join('\n');
-        var child2 = document.createElement('p');
-        child2.innerText = nice;
-        child2.classList.add('children');
-        modalDaddy.appendChild(child2);
+        modalFn('modal-tittle', "Saved as default", 'children', successArr);
     } else {
         errors.length = 0;
-        errors.push("Name:" + "           " + nameArr);
-        errors.push("Last Name:" + "       " + lastNameArr);
-        errors.push("Id:"+ "              " + idArr);
-        errors.push("Phone Number:" + "    " + phoneArr);
-        errors.push("Date of Birth:" + "   " + birthArr);
-        errors.push("City:" + "            " + cityArr);
-        errors.push("Address:" + "         " + adressArr);
-        errors.push("Ziz:" + "             " + zipArr);
-        errors.push("Password:" + "        " + paswordArr);
-        errors.push("Repeat Password:" + " " + repeatArr);
-        errors.push("EmailL:" + "          " + emailArr);
-        var notNice = errors.join('\n');
-        modal.classList.remove('hidden');
-        modal.classList.add('modal');
-        var h2 = document.createElement('h2');
-        h2.classList.add('modal-tittle2');
-        h2.innerText = "An issue was found";
-        modalDaddy.appendChild(h2);
-        var child3 = document.createElement('p');
-        child3.classList.add('children2');
-        modalDaddy.appendChild(child3);
-        child3.innerText = notNice;
+        errorsPush();
+        modalFn('modal-tittle2', "An issue was found", 'children2', errors)
     }
 });
-span.onclick = function() {
-  modal.classList.remove('modal');
-  modal.classList.add('hidden');
-  modalDaddy.replaceChildren(span);
-  if (success) {
-    window.location.href = "./log-in.html";
-  }
-}
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.classList.remove('modal');
-    modal.classList.add('hidden');
-    modalDaddy.replaceChildren(span);
-  } else if (success) {
-    window.location.href = "./log-in.html";
-  }
+function goodAsNew() {
+    nameFocusFn();
+    lastNameFocusFn();
+    idFocusFn();
+    phoneFocusFn();
+    dobFocusFn();
+    cityFocusFn();
+    addressFocusFn();
+    zipFocusFn();
+    passwordFocusFn();
+    repeatFocusFn();
+    emailFocusFn();
+    nameArr.length = 0;
+    lastNameArr.length = 0;
+    idArr.length = 0;
+    phoneArr.length = 0;
+    birthArr.length = 0;
+    cityArr.length = 0;
+    adressArr.length = 0;
+    zipArr.length = 0;
+    paswordArr.length = 0;
+    repeatArr.length = 0;
+    emailArr.length = 0;
+    successArr.length = 0;
+    nameFn();
+    lastNameFn();
+    idFn();
+    phoneFn();
+    dobFn();
+    cityFn();
+    addressFn();
+    zipFn();
+    passwordFn();
+    repeatFn();
+    emailFn();
 }
