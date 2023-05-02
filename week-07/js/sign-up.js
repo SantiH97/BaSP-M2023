@@ -88,7 +88,7 @@ nameInput.addEventListener("blur", nameFn);
  function nameFn() {
     validateChars(nameInput, nameLabelError, nameErrorDaddy, nameInputClassName, !both, nameArr);
     validateEmpty(nameInput, nameLabelError);
-    moreThan(nameInput, nameLabelError, nameErrorDaddy, nameInputClassName, 3, nameArr);
+    moreThan(nameInput, nameLabelError, nameErrorDaddy, nameInputClassName, 4, nameArr);
     if (hasError) {
         hasError = false;
         return;
@@ -102,7 +102,7 @@ lastNameInput.addEventListener("blur", lastNameFn);
  function lastNameFn() {
     validateChars(lastNameInput, lastNameLabelError, lastNameErrorDaddy, lastNameInputClassName, !both, lastNameArr);
     validateEmpty(lastNameInput, lastNameLabelError);
-    moreThan(lastNameInput, lastNameLabelError, lastNameErrorDaddy, lastNameInputClassName, 3, lastNameArr);
+    moreThan(lastNameInput, lastNameLabelError, lastNameErrorDaddy, lastNameInputClassName, 4, lastNameArr);
     if (hasError) {
         hasError = false;
         return;
@@ -117,6 +117,7 @@ function idFn() {
     validateNumbs(idInput, idLabelError, idErrorDaddy, idInputClassName, idArr);
     validateEmpty(idInput, idLabelError);
     moreThan(idInput, idLabelError, idErrorDaddy,idInputClassName, 7, idArr);
+    lessThan(idInput, idLabelError, idErrorDaddy,idInputClassName, 8, idArr);
     if (hasError) {
         hasError = false;
         return;
@@ -237,6 +238,7 @@ function repeatFn() {
         showErrorFn(text, repeatLabelError, repeatInputClassName, repeatErrorDaddy, repeatInput);
         repeatArr.push(" Not a match");
         isEqual = false;
+        return repeatIsValid = false;
     } else {
         isEqual = true;
     }
@@ -595,7 +597,7 @@ continueBtn.addEventListener("click", function(e) {
     };
     fetch(`${url}?name=${data.name}&lastName=${data.lastName}&dni=${data.id}&phone=${data.phoneNumber}&dob=${formattedDate}&city=${data.city}&address=${data.address}&zip=${data.zip}&password=${data.password}&email=${data.email}`)
     .then(function(res) {
-        throw new Error("Shit happened");
+        // throw new Error("Shit happened");
         return res.json();
     })
     .then(function(data) {
@@ -605,7 +607,8 @@ continueBtn.addEventListener("click", function(e) {
             child1.setAttribute('id','success');
             child1.classList.add('children');
             modalDaddy.appendChild(child1);
-            // window.location.href = "./log-in.html";
+            var success = true;
+            return success;
           } else {
             var notNice = errors.join('\n');
             modal.classList.remove('hidden');
@@ -673,11 +676,16 @@ span.onclick = function() {
   modal.classList.remove('modal');
   modal.classList.add('hidden');
   modalDaddy.replaceChildren(span);
+  if (success) {
+    window.location.href = "./log-in.html";
+  }
 }
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.classList.remove('modal');
     modal.classList.add('hidden');
     modalDaddy.replaceChildren(span);
+  } else if (success) {
+    window.location.href = "./log-in.html";
   }
 }
